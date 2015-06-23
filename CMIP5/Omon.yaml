@@ -1,0 +1,1151 @@
+description:
+    outpath: "/stornext/online13/ocean/simulations/CMIP"
+    experiment_id: "decadal1960"
+    institution: "INPE"
+    source: "BESM-OA2.5.1 2014 atmosphere: CPTEC (T62L28); ocean: MOM (mom4p1_pubrel_18dec2009, 0.25-2xL50); land: SSIB"
+    calendar: "julian"
+    realization: 1
+    contact: "Dr. Paulo Nobre <paulo.nobre@cptec.inpe.br>"
+    history: ""
+    comment: ""
+    references: ""
+    #leap_year:
+    #leap_month:
+    #month_lengths:
+    model_id: "BESM-OA2.5.1"
+    forcing: "GHG, Sl" 
+    initialization_method: 1
+    physics_version: 1
+    institute_id: "INPE"
+    parent_experiment_id: "N/A"
+    branch_time: 0.0
+    parent_experiment_rip: "N/A"
+
+variables:
+    masso:
+        table: "CMIP5_Omon"
+        priority: 1
+        long name: "Sea Water Mass "
+        units: "kg"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "total_mass_seawater"
+        units in BMGCS: "kg"  # in units syntax
+        desired units: "kg"   # in units syntax
+        output variable name: "masso"
+        standard name: "sea_water_mass"
+        unformatted units: "kg"
+        cell_methods: "time: mean area: sum where sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["time"]
+        CMOR variable name: "masso"
+        realm: "ocean"
+        frequency:
+        cell_measures:
+        flag_values:
+        flag_meanings:
+    pbo:
+        table: "CMIP5_Omon"
+        priority: 1
+        long name: "Sea Water Pressure at Sea floor "
+        units: "dbar "
+        comment: 
+        questions and notes: 
+        name in BMGCS: "pbot_t"
+        units in BMGCS: "dbar"  # in units syntax
+        desired units: "dbar"   # in units syntax
+        output variable name: "pbo"
+        standard name: "sea_water_pressure_at_sea_floor"
+        unformatted units: "dbar "
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "pbo"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    pso:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Sea Water Pressure at Sea Water Surface "
+        units: "dbar "
+        comment: 
+        questions and notes: 
+        name in BMGCS: "patm_t"
+        units in BMGCS: "Pa"  # in units syntax
+        desired units: "dbar"   # in units syntax
+        output variable name: "pso"
+        standard name: "sea_water_pressure_at_sea_water_surface"
+        unformatted units: "dbar"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "pso"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    volo:
+        table: "CMIP5_Omon"
+        priority: 1
+        long name: "Sea Water Volume "
+        units: "m3"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "total_volume_seawater"
+        units in BMGCS: "m3"  # in units syntax
+        desired units: "m3"   # in units syntax
+        output variable name: "volo"
+        standard name: "sea_water_volume"
+        unformatted units: "m3"
+        cell_methods: "time: mean area: sum where sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["time"]
+        CMOR variable name: "volo"
+        realm: "ocean"
+        frequency:
+        cell_measures:
+        flag_values:
+        flag_meanings:
+    zos:
+        table: "CMIP5_Omon"
+        priority: 1
+        long name: "Sea Surface Height Above Geoid "
+        units: "m"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "sea_level"
+        units in BMGCS: "m"  # in units syntax
+        desired units: "m"   # in units syntax
+        output variable name: "zos"
+        standard name: "sea_surface_height_above_geoid"
+        unformatted units: "m"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "zos"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    zossq:
+        table: "CMIP5_Omon"
+        priority: 3
+        long name: "Square of Sea Surface Height Above Geoid"
+        units: "m2"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "sea_level_sq"
+        units in BMGCS: "m2"  # in units syntax
+        desired units: "m2"   # in units syntax
+        output variable name: "zossq"
+        standard name: "square_of_sea_surface_height_above_geoid"
+        unformatted units: "m2"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "zossq"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    masscello:
+        table: "CMIP5_Omon"
+        priority: 1
+        long name: "Sea Water Mass Per Unit Area"
+        units: "kg m-2"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "rho_dzt"
+        units in BMGCS: "kg/m2"  # in units syntax
+        desired units: "kg/m2"   # in units syntax
+        output variable name: "masscello"
+        standard name: "sea_water_mass_per_unit_area"
+        unformatted units: "kg m-2"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time"]
+        CMOR variable name: "masscello"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+    thkcello:
+        table: "CMIP5_Omon"
+        priority: 1
+        long name: "Ocean Model Cell Thickness "
+        units: "m"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "dzt"
+        units in BMGCS: "m"  # in units syntax
+        desired units: "m"   # in units syntax
+        output variable name: "thkcello"
+        standard name: "cell_thickness"
+        unformatted units: "m"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time"]
+        CMOR variable name: "thkcello"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+    thetao:
+        table: "CMIP5_Omon"
+        priority: 1
+        long name: "Sea Water Potential Temperature "
+        units: "K"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "pot_temp"
+        units in BMGCS: "K"  # in units syntax
+        desired units: "K"   # in units syntax
+        output variable name: "thetao"
+        standard name: "sea_water_potential_temperature"
+        unformatted units: "K"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time"]
+        CMOR variable name: "thetao"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+    thetaoga:
+        table: "CMIP5_Omon"
+        priority: 1
+        long name: "Global Average Sea Water Potential Temperature "
+        units: "K"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "pot_temp_global_ave"
+        units in BMGCS: "K"  # in units syntax
+        desired units: "K"   # in units syntax
+        output variable name: "thetaoga"
+        standard name: "sea_water_potential_temperature"
+        unformatted units: "K"
+        cell_methods: "time: mean area: mean where sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["time"]
+        CMOR variable name: "thetaoga"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    tos:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Sea Surface Temperature "
+        units: "K"
+        comment: 'this may differ from "surface temperature" in regions of sea ice.'
+        questions and notes: 
+        name in BMGCS: "surface_pot_temp"
+        units in BMGCS: "K"  # in units syntax
+        desired units: "K"   # in units syntax
+        output variable name: "tos"
+        standard name: "sea_surface_temperature"
+        unformatted units: "K"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "tos"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    tossq:
+        table: "CMIP5_Omon"
+        priority: 3
+        long name: "Square of Sea Surface Temperature"
+        units: "K2"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "squared_surface_pot_temp"
+        units in BMGCS: "K2"  # in units syntax
+        desired units: "K2"   # in units syntax
+        output variable name: "tossq"
+        standard name: "square_of_sea_surface_temperature"
+        unformatted units: "K2"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "tossq"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    so:
+        table: "CMIP5_Omon"
+        priority: 1
+        long name: "Sea Water Salinity"
+        units: "psu" 
+        comment: 
+        questions and notes: 
+        name in BMGCS: "salt"
+        units in BMGCS: "1"  # in units syntax
+        desired units: "1"   # in units syntax
+        output variable name: "so"
+        standard name: "sea_water_salinity"
+        unformatted units: "psu"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time"]
+        CMOR variable name: "so"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+    soga:
+        table: "CMIP5_Omon"
+        priority: 1
+        long name: "Global Mean Sea Water Salinity"
+        units: "psu"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "salt_global_ave"
+        units in BMGCS: "1"  # in units syntax
+        desired units: "1"   # in units syntax
+        output variable name: "soga"
+        standard name: "sea_water_salinity"
+        unformatted units: "psu"
+        cell_methods: "time: mean area: mean where sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["time"]
+        CMOR variable name: "soga"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    sos:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Sea Surface Salinity"
+        units: "psu"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "surface_salt"
+        units in BMGCS: "1"  # in units syntax
+        desired units: "1"   # in units syntax
+        output variable name: "sos"
+        standard name: "sea_surface_salinity"
+        unformatted units: "psu"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "sos"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    rhopoto:
+        table: "CMIP5_Omon"
+        priority: 3
+        long name: "Sea Water Potential Density "
+        units: "kg m-3"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "pot_rho_0"
+        units in BMGCS: "kg/m3"  # in units syntax
+        desired units: "kg/m3"   # in units syntax
+        output variable name: "rhopoto"
+        standard name: "sea_water_potential_density"
+        unformatted units: "kg m-3"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time"]
+        CMOR variable name: "rhopoto"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+#    agessc:
+#        table: "CMIP5_Omon"
+#        priority: 3
+#        long name: "Sea Water Age Since Surface Contact"
+#        units: "yr"
+#        comment: 
+#        questions and notes: 
+#        name in BMGCS: "age_global"
+#        units in BMGCS: "yr"  # in units syntax
+#        desired units: "yr"   # in units syntax
+#        output variable name: "agessc"
+#        standard name: "sea_water_age_since_surface_contact"
+#        unformatted units: "yr"
+#        cell_methods: "time: mean"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "olevel", "time"]
+#        CMOR variable name: "agessc"
+#        realm: "ocean"
+#        frequency:
+#        cell_measures: "area: areacello volume: volcello"
+#        flag_values:
+#        flag_meanings:
+    msftbarot:
+        table: "CMIP5_Omon"
+        priority: 3
+        long name: "Ocean Barotropic Mass Streamfunction "
+        units: "kg s-1"
+        comment: "differs from CMIP3 because it includes mass."
+        questions and notes: 
+        name in BMGCS: "psiu"
+        units in BMGCS: "kg/s"  # in units syntax
+        desired units: "kg/s"   # in units syntax
+        output variable name: "msftbarot"
+        standard name: "ocean_barotropic_mass_streamfunction"
+        unformatted units: "kg s-1"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "msftbarot"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    mlotst:
+        table: "CMIP5_Omon"
+        priority: 3
+        long name: "Ocean Mixed Layer Thickness Defined by Sigma T"
+        units: "m"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "mld"
+        units in BMGCS: "m"  # in units syntax
+        desired units: "m"   # in units syntax
+        output variable name: "mlotst"
+        standard name: "ocean_mixed_layer_thickness_defined_by_sigma_t"
+        unformatted units: "m"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "mlotst"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    mlotstsq:
+        table: "CMIP5_Omon"
+        priority: 3
+        long name: "Square of Ocean Mixed Layer Thickness Defined by Sigma T"
+        units: "m2"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "mld_sq"
+        units in BMGCS: "m2"  # in units syntax
+        desired units: "m2"   # in units syntax
+        output variable name: "mlotstsq"
+        standard name: "square_of_ocean_mixed_layer_thickness_defined_by_sigma_t"
+        unformatted units: "m2"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "mlotstsq"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    omldamax:
+        table: "CMIP5_Omon"
+        priority: 3
+        long name: "Mean Daily Maximum Ocean Mixed Layer Thickness Defined by Mixing Scheme"
+        units: "m"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "hblt"
+        units in BMGCS: "m"  # in units syntax
+        desired units: "m"   # in units syntax
+        output variable name: "omldamax"
+        standard name: "ocean_mixed_layer_thickness_defined_by_mixing_scheme"
+        unformatted units: "m"
+        cell_methods: "time: maximum within days time: mean over days"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "omldamax"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    omlmax:
+        table: "CMIP5_Omon"
+        priority: 3
+        long name: "Monthly Maximum Ocean Mixed Layer Thickness Defined by Mixing Scheme"
+        units: "m"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "hblt"
+        units in BMGCS: "m"  # in units syntax
+        desired units: "m"   # in units syntax
+        output variable name: "omlmax"
+        standard name: "ocean_mixed_layer_thickness_defined_by_mixing_scheme"
+        unformatted units: "m"
+        cell_methods: "time: maximum"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "omlmax"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    uo:
+        table: "CMIP5_Omon"
+        priority: 1
+        long name: "Sea Water X Velocity"
+        units: "m s-1"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "u"
+        units in BMGCS: "m/s"  # in units syntax
+        desired units: "m/s"   # in units syntax
+        output variable name: "uo"
+        standard name: "sea_water_x_velocity"
+        unformatted units: "m s-1"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time"]
+        CMOR variable name: "uo"
+        realm: "ocean"
+        frequency:
+        cell_measures:
+        flag_values:
+        flag_meanings:
+    vo:
+        table: "CMIP5_Omon"
+        priority: 1
+        long name: "Sea Water Y Velocity"
+        units: "m s-1"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "v"
+        units in BMGCS: "m/s"  # in units syntax
+        desired units: "m/s"   # in units syntax
+        output variable name: "vo"
+        standard name: "sea_water_y_velocity"
+        unformatted units: "m s-1"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time"]
+        CMOR variable name: "vo"
+        realm: "ocean"
+        frequency:
+        cell_measures:
+        flag_values:
+        flag_meanings:
+    wmo:
+        table: "CMIP5_Omon"
+        priority: 1
+        long name: "Upward Ocean Mass Transportx "
+        units: "kg s-1"
+        comment: "differs from CMIP3, which only had upward velocity."
+        questions and notes: 
+        name in BMGCS: "tz_trans"
+        units in BMGCS: "kg/s"  # in units syntax
+        desired units: "kg/s"   # in units syntax
+        output variable name: "wmo"
+        standard name: "upward_ocean_mass_transport"
+        unformatted units: "kg s-1"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time"]
+        CMOR variable name: "wmo"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+    wmosq:
+        table: "CMIP5_Omon"
+        priority: 1
+        long name: "Square of Upward Ocean Mass Transport"
+        units: "kg2 s-2"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "tz_trans_sq"
+        units in BMGCS: ""  # in units syntax
+        desired units: ""   # in units syntax
+        output variable name: "wmosq"
+        standard name: "square_of_upward_ocean_mass_transport"
+        unformatted units: "kg2 s-2"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time"]
+        CMOR variable name: "wmosq"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+    pr:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Rainfall Flux where Ice Free Ocean over Sea"
+        units: "kg m-2 s-1"
+        comment: "computed as the total mass of liquid water falling as liquid rain  into the ice-free portion of the ocean divided by the area of the ocean portion of the grid cell."
+        questions and notes: 
+        name in BMGCS: "lprec"
+        units in BMGCS: "kg/m2/s"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "pr"
+        standard name: "rainfall_flux"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time: mean area: mean where ice_free_sea over sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "pr"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    prsn:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Snowfall Flux where Ice Free Ocean over Sea"
+        units: "kg m-2 s-1"
+        comment: "computed as the total mass of ice directly falling as snow into the ice-free portion of the ocean divided by the area of the ocean portion of the grid cell."
+        questions and notes: 
+        name in BMGCS: "fprec"
+        units in BMGCS: "kg/m2/s"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "prsn"
+        standard name: "snowfall_flux"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time: mean area: mean where ice_free_sea over sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "prsn"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    evs:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Water Evaporation Flux Where Ice Free Ocean over Sea"
+        units: "kg m-2 s-1"
+        comment: "computed as the total mass of water vapor evaporating from the ice-free portion of the ocean  divided by the area of the ocean portion of the grid cell."
+        questions and notes: 
+        name in BMGCS: "evap"
+        units in BMGCS: "kg/m2/s"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "evs"
+        standard name: "water_evaporation_flux"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time: mean area: mean where ice_free_sea over sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "evs"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    friver:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Water Flux into Sea Water From Rivers "
+        units: "kg m-2 s-1"
+        comment: "computed as the river flux of water into the ocean divided by the area of the ocean portion of the grid cell."
+        questions and notes: 
+        name in BMGCS: "runoff"
+        units in BMGCS: "kg/m2/s"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "friver"
+        standard name: "water_flux_into_sea_water_from_rivers"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time: mean area: mean where sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "friver"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+#    ficeberg:
+#        table: "CMIP5_Omon"
+#        priority: 2
+#        long name: "Water Flux into Sea Water From Icebergs"
+#        units: "kg m-2 s-1"
+#        comment: "computed as the iceberg melt water  flux into the ocean divided by the area of the ocean portion of the grid cell."
+#        questions and notes: "If only the vertically integrated melt water flux is available, report as this 2-d field; otherwise the row above should be used."
+#        name in BMGCS: "ice_calving"
+#        units in BMGCS: "kg/m2/s"  # in units syntax
+#        desired units: "kg/m2/s"   # in units syntax
+#        output variable name: "ficeberg"
+#        standard name: "water_flux_into_sea_water_from_icebergs"
+#        unformatted units: "kg m-2 s-1"
+#        cell_methods: "time: mean area: mean where sea"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "time"]
+#        CMOR variable name: "ficeberg2d"
+#        realm: "ocean"
+#        frequency:
+#        cell_measures: "area: areacello"
+#        flag_values:
+#        flag_meanings:
+    fsitherm:
+        table: "CMIP5_Omon"
+        priority: 1
+        long name: "Water Flux into Sea Water due to Sea Ice Thermodynamics "
+        units: "kg m-2 s-1"
+        comment: "computed as the sea ice thermodynamic water flux into the ocean divided by the area of the ocean portion of the grid cell."
+        questions and notes: "The priority set by the WGOMD was 2 for this field.  The sea-ice folks requested that the priority be raised to 1."
+        name in BMGCS: "melt"
+        units in BMGCS: "kg/m2/s"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "fsitherm"
+        standard name: "water_flux_into_sea_water_due_to_sea_ice_thermodynamics"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time: mean area: mean where sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "fsitherm"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    wfo:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Water Flux into Sea Water "
+        units: "kg m-2 s-1"
+        comment: "computed as the water  flux into the ocean divided by the area of the ocean portion of the grid cell.  This is the sum of the next two variables in this table."
+        questions and notes: 
+        name in BMGCS: "pme_river"
+        units in BMGCS: "kg/m2/s"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "wfo"
+        standard name: "water_flux_into_sea_water"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time: mean area: mean where sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "wfo"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+#    vsfcorr :
+#        table: "CMIP5_Omon"
+#        priority: 2
+#        long name: "Virtual Salt Flux Correction"
+#        units: "kg m-2 s-1"
+#        comment: 
+#        questions and notes: 
+#        name in BMGCS: "salt_flux_correct"
+#        units in BMGCS: "kg/m2/s"  # in units syntax
+#        desired units: "kg/m2/s"   # in units syntax
+#        output variable name: "vsfcorr"
+#        standard name: "virtual_salt_flux_correction"
+#        unformatted units: "kg m-2 s-1"
+#        cell_methods: "time: mean area: mean where sea"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "time"]
+#        CMOR variable name: "vsfcorr "
+#        realm: "ocean"
+#        frequency:
+#        cell_measures: "area: areacello"
+#        flag_values:
+#        flag_meanings:
+#    sfdsi:
+#        table: "CMIP5_Omon"
+#        priority: 1
+#        long name: "Downward Sea Ice Basal Salt Flux"
+#        units: "kg m-2 s-1"
+#        comment: "This field is physical, and it arises since sea ice has a nonzero salt content, so it exchanges salt with the liquid ocean upon melting and freezing."
+#        questions and notes: "The priority set by the WGOMD was 2 for this field.  The sea-ice folks requested that the priority be raised to 1."
+#        name in BMGCS: "salt_flux_ice"
+#        units in BMGCS: "kg/m2/s"  # in units syntax
+#        desired units: "kg/m2/s"   # in units syntax
+#        output variable name: "sfdsi"
+#        standard name: "downward_sea_ice_basal_salt_flux"
+#        unformatted units: "kg m-2 s-1"
+#        cell_methods: "time: mean area: mean where sea"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "time"]
+#        CMOR variable name: "sfdsi"
+#        realm: "ocean"
+#        frequency:
+#        cell_measures: "area: areacello"
+#        flag_values:
+#        flag_meanings:
+#    sfriver:
+#        table: "CMIP5_Omon"
+#        priority: 2
+#        long name: "Salt Flux into Sea Water from Rivers "
+#        units: "kg m-2 s-1"
+#        comment: 
+#        questions and notes: 
+#        name in BMGCS: "salt_flux_runoff"
+#        units in BMGCS: "kg/m2/s"  # in units syntax
+#        desired units: "kg/m2/s"   # in units syntax
+#        output variable name: "sfriver"
+#        standard name: "salt_flux_into_sea_water_from_rivers"
+#        unformatted units: "kg m-2 s-1"
+#        cell_methods: "time: mean area: mean where sea"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "time"]
+#        CMOR variable name: "sfriver"
+#        realm: "ocean"
+#        frequency:
+#        cell_measures: "area: areacello"
+#        flag_values:
+#        flag_meanings:
+    hfrainds:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Temperature Flux due to Rainfall Expressed as Heat Flux into Sea Water "
+        units: "W m-2"
+        comment: 'This is defined as "where ice_free_sea over sea"; i.e., the total flux (considered here) entering the ice-free portion of the grid cell divided by the area of the ocean portion of the grid cell.'
+        questions and notes: 
+        name in BMGCS: "sfc_hflux_from_water_prec"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "hfrainds"
+        standard name: "temperature_flux_due_to_rainfall_expressed_as_heat_flux_into_sea_water"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean area: mean where ice_free_sea over sea"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "hfrainds"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    hfrunoffds:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Temperature Flux due to Runoff Expressed as Heat Flux into Sea Water "
+        units: "W m-2"
+        comment: 
+        questions and notes: "If only the vertically integrated runoff flux is available, report as this 2-d field; otherwise the row above should be used."
+        name in BMGCS: "sfc_hflux_from_runoff"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "hfrunoffds"
+        standard name: "temperature_flux_due_to_runoff_expressed_as_heat_flux_into_sea_water"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean area: mean where sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "hfrunoffds"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    hfsnthermds:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Heat Flux into Sea Water due to Snow Thermodynamics "
+        units: "W m-2"
+        comment: 
+        questions and notes: "If only the vertically integrated heat flux is available, report as this 2-d field; otherwise the row above should be used."
+        name in BMGCS: "fprec_melt_heat"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "hfsnthermds"
+        standard name: "heat_flux_into_sea_water_due_to_snow_thermodynamics"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean area: mean where sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "hfsnthermds"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    hfibthermds:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Heat Flux into Sea Water due to Iceberg Thermodynamics "
+        units: "W m-2"
+        comment: 
+        questions and notes: "If only the vertically integrated heat flux is available, report as this 2-d field; otherwise the row above should be used."
+        name in BMGCS: "calving_melt_heat"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "hfibthermds"
+        standard name: "heat_flux_into_sea_water_due_to_iceberg_thermodynamics"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean area: mean where sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "hfibthermds"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    rlds:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Surface Net Downward Longwave Radiation"
+        units: "W m-2"
+        comment: 'This is defined as "where ice_free_sea over sea"'
+        questions and notes: 
+        name in BMGCS: "lw_heat"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rlds"
+        standard name: "surface_net_downward_longwave_flux"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean area: mean where ice_free_sea over sea"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rlds"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    hfls:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Surface Downward Latent Heat Flux"
+        units: "W m-2"
+        comment: 'This is defined as "where ice_free_sea over sea"'
+        questions and notes: 
+        name in BMGCS: "evap_heat"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "hfls"
+        standard name: "surface_downward_latent_heat_flux"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean area: mean where ice_free_sea over sea"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "hfls"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    hfss:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Surface Downward Sensible Heat Flux"
+        units: "W m-2"
+        comment: 'This is defined as "where ice_free_sea over sea"'
+        questions and notes: 
+        name in BMGCS: "sens_heat"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "hfss"
+        standard name: "surface_downward_sensible_heat_flux"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean area: mean where ice_free_sea over sea"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "hfss"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    rsds:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Downwelling Shortwave Radiation in Sea Water "
+        units: "W m-2"
+        comment: 
+        questions and notes: 'In general the shortwave flux should be reported as a function of ocean depth, (i.e.,  it will be a function of the generic "XYZ" dimensions).  Include enough depth levels to represent  the non-zero values of this field everywhere on the globe.'
+        name in BMGCS: "sw_heat"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rsds"
+        standard name: "downwelling_shortwave_flux_in_sea_water"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean area: mean where sea"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time"]
+        CMOR variable name: "rsds"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+    hfcorr :
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Heat Flux Correction "
+        units: "W m-2"
+        comment: 
+        questions and notes: "If this does not vary from one year to the next, report only a single year.  Positive indicates correction adds heat to ocean."
+        name in BMGCS: "sfc_hflux_correct"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "hfcorr"
+        standard name: "heat_flux_correction"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean area: mean where sea"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "hfcorr"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    tauuo:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Surface Downward X Stress "
+        units: "N m-2"
+        comment: "This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc."
+        questions and notes: 
+        name in BMGCS: "tau_x"
+        units in BMGCS: "N/m2"  # in units syntax
+        desired units: "N/m2"   # in units syntax
+        output variable name: "tauuo"
+        standard name: "surface_downward_x_stress"
+        unformatted units: "N m-2"
+        cell_methods: "time: mean area: mean where sea"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "tauuo"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    tauvo:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Surface Downward Y Stress"
+        units: "N m-2"
+        comment: "This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc."
+        questions and notes: 
+        name in BMGCS: "tau_y"
+        units in BMGCS: "N/m2"  # in units syntax
+        desired units: "N/m2"   # in units syntax
+        output variable name: "tauvo"
+        standard name: "surface_downward_y_stress"
+        unformatted units: "N m-2"
+        cell_methods: "time: mean area: mean where sea"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "tauvo"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+#    tauucorr:
+#        table: "CMIP5_Omon"
+#        priority: 2
+#        long name: "Surface Downward X Stress Correction"
+#        units: "N m-2"
+#        comment: "This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc."
+#        questions and notes: "If this does not vary from one year to the next, report only a single year."
+#        name in BMGCS: "tau_x_flux_correction"
+#        units in BMGCS: "N/m2"  # in units syntax
+#        desired units: "N/m2"   # in units syntax
+#        output variable name: "tauucorr"
+#        standard name: "surface_downward_x_stress_correction"
+#        unformatted units: "N m-2"
+#        cell_methods: "time: mean area: mean where sea"
+#        positive: "down"
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "time"]
+#        CMOR variable name: "tauucorr"
+#        realm: "ocean"
+#        frequency:
+#        cell_measures: "area: areacello"
+#        flag_values:
+#        flag_meanings:
+#    tauvcorr:
+#        table: "CMIP5_Omon"
+#        priority: 2
+#        long name: "Surface Downward Y Stress Correction"
+#        units: "N m-2"
+#        comment: "This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc."
+#        questions and notes: "If this does not vary from one year to the next, report only a single year."
+#        name in BMGCS: "tau_x_flux_correction"
+#        units in BMGCS: "N/m2"  # in units syntax
+#        desired units: "N/m2"   # in units syntax
+#        output variable name: "tauvcorr"
+#        standard name: "surface_downward_y_stress_correction"
+#        unformatted units: "N m-2"
+#        cell_methods: "time: mean area: mean where sea"
+#        positive: "down"
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "time"]
+#        CMOR variable name: "tauvcorr"
+#        realm: "ocean"
+#        frequency:
+#        cell_measures: "area: areacello"
+#        flag_values:
+#        flag_meanings:

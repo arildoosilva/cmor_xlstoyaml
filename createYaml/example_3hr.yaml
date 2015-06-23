@@ -1,0 +1,507 @@
+description:
+    outpath: "/stornext/online13/ocean/simulations/CMIP"
+    experiment_id: "decadal1960"
+    institution: "INPE"
+    source: "BESM-OA2.5.1 2014 atmosphere: CPTEC (T62L28); ocean: MOM (mom4p1_pubrel_18dec2009, 0.25-2xL50); land: SSIB"
+    calendar: "julian"
+    realization: 1
+    contact: "Dr. Paulo Nobre <paulo.nobre@cptec.inpe.br>"
+    history: ""
+    comment: ""
+    references: ""
+    #leap_year:
+    #leap_month:
+    #month_lengths:
+    model_id: "BESM-OA2.5.1"
+    forcing: "GHG, Sl" 
+    initialization_method: 1
+    physics_version: 1
+    institute_id: "INPE"
+    parent_experiment_id: "N/A"
+    branch_time: 0.0
+    parent_experiment_rip: "N/A"
+
+variables:
+    pr:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Precipitation"
+        units: "kg m-2 s-1"
+        comment: "at surface; includes both liquid and solid phases.  This is the 3-hour mean precipitation flux."
+        questions and notes:
+        name in BMGCS: "PREC"
+        units in BMGCS: "kg/m2/day"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "pr"
+        standard name: "precipitation_flux"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time:mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "pr"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    tas:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Air Temperature"
+        units: "K"
+        comment: "This is sampled synoptically."
+        questions and notes: "normally, report at 2 meters above the surface"
+        name in BMGCS: "T02M"
+        units in BMGCS: "K"  # in units syntax
+        desired units: "K"   # in units syntax
+        output variable name: "tas"
+        standard name: "air_temperature"
+        unformatted units: "K"
+        cell_methods: "time: point"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time1", "height2m"]
+        CMOR variable name: "tas"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    hfls:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Surface Upward Latent Heat Flux"
+        units: "W m-2"
+        comment: "This is the 3-hour mean flux."
+        questions and notes:
+        name in BMGCS: "CLSF"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "hfls"
+        standard name: "surface_upward_latent_heat_flux"
+        unformatted units: "W/m-2"
+        cell_methods: "time: mean"
+        positive: "up"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "hfls"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    hfss:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Surface Upward Sensible Heat Flux"
+        units: "W m-2"
+        comment: "This is the 3-hour mean flux."
+        questions and notes:
+        name in BMGCS: "CSSF"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "hfss"
+        standard name: "surface_upward_sensible_heat_flux"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean"
+        positive: "up"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "hfss"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    rlds:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Surface Downwelling Longwave Radiation"
+        units: "W m-2"
+        comment: "This is the 3-hour mean flux."
+        questions and notes:
+        name in BMGCS: "OLIS"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rlds"
+        standard name: "surface_downwelling_longwave_flux_in_air"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rlds"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    rlus:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Surface Upwelling Longwave Radiation"
+        units: "W m-2"
+        comment: "This is the 3-hour mean flux."
+        questions and notes:
+        name in BMGCS: "OLES"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rlus"
+        standard name: "surface_upwelling_longwave_flux_in_air"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean"
+        positive: "up"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rlus"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    rsds:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Surface Downwelling Shortwave Radiation"
+        units: "W m-2"
+        comment: "This is the 3-hour mean flux."
+        questions and notes:
+        name in BMGCS: "OCIS"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rsds"
+        standard name: "surface_downwelling_shortwave_flux_in_air"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rsds"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    rsus:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Surface Upwelling Shortwave Radiation"
+        units: "W m-2"
+        comment: "This is the 3-hour mean flux."
+        questions and notes:
+        name in BMGCS: "OCES"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rsus"
+        standard name: "surface_upwelling_shortwave_flux_in_air"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean"
+        positive: "up"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rsus"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    uas:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Eastward Near-Surface Wind Speed"
+        units: "m s-1"
+        comment: "This is sampled synoptically."
+        questions and notes:
+        name in BMGCS: "U10M"
+        units in BMGCS: "m/s"  # in units syntax
+        desired units: "m/s"   # in units syntax
+        output variable name: "uas"
+        standard name: "eastward_wind"
+        unformatted units: "m s-1"
+        cell_methods: "time: point"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time1", "height10m"]
+        CMOR variable name: "uas"
+        realm: "atmos"
+        frequency:
+        cell_measures: 
+        flag_values:
+        flag_meanings:
+    vas:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Northward Near-Surface Wind Speed"
+        units: "m s-1"
+        comment: "This is sampled synoptically."
+        questions and notes:
+        name in BMGCS: "V10M"
+        units in BMGCS: "m/s"  # in units syntax
+        desired units: "m/s"   # in units syntax
+        output variable name: "vas"
+        standard name: "northward_wind"
+        unformatted units: "m s-1"
+        cell_methods: "time: point"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time1", "height10m"]
+        CMOR variable name: "vas"
+        realm: "atmos"
+        frequency:
+        cell_measures: 
+        flag_values:
+        flag_meanings:
+    huss:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Near-Surface Specific Humidity"
+        units: "1"
+        comment: "This is sampled synoptically."
+        questions and notes: "normally, report at 2 meters above the surface"
+        name in BMGCS: "Q02M"
+        units in BMGCS: "1"  # in units syntax
+        desired units: "1"   # in units syntax
+        output variable name: "huss"
+        standard name: "specific_humidity"
+        unformatted units: "1"
+        cell_methods: "time: point"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time1", "height2m"]
+        CMOR variable name: "huss"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    tslsi:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Surface Temperature Where Land or Sea Ice"
+        units: "K"
+        comment: '"skin" temperature of all surfaces except open ocean, sampled synoptically.'
+        questions and notes:
+        name in BMGCS: "TSFC"
+        units in BMGCS: "K"  # in units syntax
+        desired units: "K"   # in units syntax
+        output variable name: "tslsi"
+        standard name: "surface_temperature"
+        unformatted units: "K"
+        cell_methods: "time: point"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time1"]
+        CMOR variable name: "tslsi"
+        realm: "land"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    tso:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Sea Surface Temperature"
+        units: "K"
+        comment: "temperature of surface of open ocean, sampled synoptically."
+        questions and notes:
+        name in BMGCS: "surf_potential_temp"
+        units in BMGCS: "K"  # in units syntax
+        desired units: "K"   # in units syntax
+        output variable name: "tso"
+        standard name: "sea_surface_temperature"
+        unformatted units: "K"
+        cell_methods: "time: point area: mean where sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time1"]
+        CMOR variable name: "tso"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    prc:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Convective Precipitation"
+        units: "kg m-2 s-1"
+        comment: "at surface.  This is a 3-hour mean convective precipitation flux."
+        questions and notes:
+        name in BMGCS: "PRCV"
+        units in BMGCS: "kg/m2/day"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "prc"
+        standard name: "convective_precipitation_flux"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time:mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "prc"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    prsn:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Snowfall Flux"
+        units: "kg m-2 s-1"
+        comment: "at surface.  Includes all forms of precipitating solid phase of water.  This is the 3-hour mean snowfall flux."
+        questions and notes:
+        name in BMGCS: "NEVE"
+        units in BMGCS: "kg/m2/day"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "prsn"
+        standard name: "snowfall_flux"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time:mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "prsn"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    mrro:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Total Runoff"
+        units: "kg m-2 s-1"
+        comment: 'the total runoff (including "drainage" through the base of the soil model) leaving the land portion of the grid cell divided by the land area in the grid cell, averaged over the 3-hour interval.'
+        questions and notes:
+        name in BMGCS: "RNOF"
+        units in BMGCS: "kg/m2/s"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "mrro"
+        standard name: "runoff_flux"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time: mean area: mean where land"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "mrro"
+        realm: "land"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    rldscs:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Surface Downwelling Clear-Sky Longwave Radiation"
+        units: "W m-2"
+        comment: "This is a 3-hour mean flux."
+        questions and notes:
+        name in BMGCS: "OLIC"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rldscs"
+        standard name: "downwelling_longwave_flux_in_air_assuming_clear_sky"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean"
+        positive: "down" 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rldscs"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    rsdscs:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Surface Downwelling Clear-Sky Shortwave Radiation"
+        units: "W m-2"
+        comment: "This is a 3-hour mean flux."
+        questions and notes:
+        name in BMGCS: "OCIC"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rsdscs"
+        standard name: "surface_downwelling_shortwave_flux_in_air_assuming_clear_sky"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rsdscs"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    rsuscs:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Surface Upwelling Clear-Sky Shortwave Radiation"
+        units: "W m-2"
+        comment: "This is a 3-hour mean flux."
+        questions and notes:
+        name in BMGCS: "SWGC"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rsuscs"
+        standard name: "surface_upwelling_shortwave_flux_in_air_assuming_clear_sky"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean"
+        positive: "up"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rsuscs"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    ps:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Surface Pressure"
+        units: "Pa"
+        comment: "sampled synoptically to diagnose atmospheric tides, this is better than mean sea level pressure."
+        questions and notes:
+        name in BMGCS: "PSLC"
+        units in BMGCS: "hPa"  # in units syntax
+        desired units: "Pa"   # in units syntax
+        output variable name: "ps"
+        standard name: "surface_air_pressure"
+        unformatted units: "Pa"
+        cell_methods: "time: point"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time1"]
+        CMOR variable name: "ps"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    clt:
+        table: "CMIP5_3hr"
+        priority: 1
+        long name: "Total Cloud Fraction"
+        units: "%"
+        comment: "for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Include both large-scale and convective cloud.  This is a 3-hour mean."
+        questions and notes:
+        name in BMGCS: "CBNV"
+        units in BMGCS: "1"  # in units syntax
+        desired units: "%"   # in units syntax
+        output variable name: "clt"
+        standard name: "cloud_area_fraction"
+        unformatted units: "%"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "clt"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:

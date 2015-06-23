@@ -1,0 +1,671 @@
+description:
+    outpath: "/stornext/online13/ocean/simulations/CMIP"
+    experiment_id: "decadal1960"
+    institution: "INPE"
+    source: "BESM-OA2.5.1 2014 atmosphere: CPTEC (T62L28); ocean: MOM (mom4p1_pubrel_18dec2009, 0.25-2xL50); land: SSIB"
+    calendar: "julian"
+    realization: 1
+    contact: "Dr. Paulo Nobre <paulo.nobre@cptec.inpe.br>"
+    history: ""
+    comment: ""
+    references: ""
+    #leap_year:
+    #leap_month:
+    #month_lengths:
+    model_id: "BESM-OA2.5.1"
+    forcing: "GHG, Sl" 
+    initialization_method: 1
+    physics_version: 1
+    institute_id: "INPE"
+    parent_experiment_id: "N/A"
+    branch_time: 0.0
+    parent_experiment_rip: "N/A"
+
+variables:
+    sic:
+        table: "CMIP5_OImon"
+        priority: 1
+        long name: "Sea Ice Area Fraction"
+        units: "%"
+        comment: "fraction of grid cell covered by sea ice."
+        questions and notes: 
+        name in BMGCS: "CN"
+        units in BMGCS: "1"  # in units syntax
+        desired units: "%"   # in units syntax
+        output variable name: "sic"
+        standard name: "sea_ice_area_fraction"
+        unformatted units: "%"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "sic"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    sit:
+        table: "CMIP5_OImon"
+        priority: 1
+        long name: "Sea Ice Thickness"
+        units: "m"
+        comment: "the mean thickness of sea ice in the ocean portion of the grid cell (averaging over the entire ocean portion, including the ice-free fraction).  Reported as 0.0 in regions free of sea ice."
+        questions and notes: 
+        name in BMGCS: "HI"
+        units in BMGCS: "m"  # in units syntax
+        desired units: "m"   # in units syntax
+        output variable name: "sit"
+        standard name: "sea_ice_thickness"
+        unformatted units: "m"
+        cell_methods: "time: mean area: mean where sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "sit"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    evap:
+        table: "CMIP5_OImon"
+        priority: 1
+        long name: "Water Evaporation Flux from Sea Ice"
+        units: "kg m-2 s-1"
+        comment: "the average rate that water mass evaporates (or sublimates) from the sea ice surface (i.e., kg/s) divided by the area of the ocean (i.e., open ocean + sea ice) portion of the grid cell. This quantity, multiplied both by the oean area of the grid cell and by the length of the month, should yield the total mass of water evaporated (or sublimated) from the sea ice.  Reported as 0.0 in regions free of sea ice.  [This was computed differently in CMIP3.]"
+        questions and notes: 
+        name in BMGCS: "EVAP"
+        units in BMGCS: "kg/m2/s"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "evap"
+        standard name: "water_evaporation_flux"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time: mean area: mean where sea_ice over sea"
+        positive: "up"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "evap"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    snd:
+        table: "CMIP5_OImon"
+        priority: 1
+        long name: "Snow Depth"
+        units: "m"
+        comment: "the mean thickness of snow in the ocean portion of the grid cell (averaging over the entire ocean portion, including the snow-free ocean fraction).  Reported as 0.0 in regions free of snow-covered sea ice."
+        questions and notes: 
+        name in BMGCS: "HS"
+        units in BMGCS: "m"  # in units syntax
+        desired units: "m"   # in units syntax
+        output variable name: "snd"
+        standard name: "surface_snow_thickness"
+        unformatted units: "m"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "snd"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    ialb:
+        table: "CMIP5_OImon"
+        priority: 1
+        long name: "Sea Ice Albedo"
+        units: "1"
+        comment: 'Reported as "missing" if there is no sunlight or if a region is free of sea ice.'
+        questions and notes: 'This variable may be omitted unless the answers to the following questions are obvious:  Will this vary from year to year or is it a property of "bare sea ice" and sun angle? How is the time-mean calculated?'
+        name in BMGCS: "ALB"
+        units in BMGCS: "1"  # in units syntax
+        desired units: "1"   # in units syntax
+        output variable name: "ialb"
+        standard name: "sea_ice_albedo"
+        unformatted units: "1"
+        cell_methods: "time: mean area: mean where sea_ice"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "ialb"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    ssi:
+        table: "CMIP5_OImon"
+        priority: 3
+        long name: "Sea Ice Salinity"
+        units: "psu"
+        comment: 'When computing the time-mean here, the time-samples, weighted by the mass of sea ice in the grid cell, are accumulated and then divided by the sum of the weights.  Reported as "missing" in regions free of sea ice.'
+        questions and notes: 
+        name in BMGCS: "SSS"
+        units in BMGCS: "psu"  # in units syntax
+        desired units: "psu"   # in units syntax
+        output variable name: "ssi"
+        standard name: "sea_ice_salinity"
+        unformatted units: "psu"
+        cell_methods: "time: mean (weighted by mass of sea ice)"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "ssi"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    tsice:
+        table: "CMIP5_OImon"
+        priority: 1
+        long name: "Surface Temperature of Sea Ice"
+        units: "K"
+        comment: 'When computing the time-mean here, the time-samples, weighted by the area of sea ice in the grid cell, are accumulated and then divided by the sum of the weights.  Reported as "missing" in regions free of sea ice.  Note this will be the surface snow temperature in regions where snow covers the sea ice.'
+        questions and notes: 
+        name in BMGCS: "TS"
+        units in BMGCS: "K"  # in units syntax
+        desired units: "K"   # in units syntax
+        output variable name: "tsice"
+        standard name: "surface_temperature"
+        unformatted units: "K"
+        cell_methods: "time: mean (weighted by area of sea ice)"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "tsice"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    tsnint:
+        table: "CMIP5_OImon"
+        priority: 1
+        long name: "Temperature at Interface Between Sea Ice and Snow"
+        units: "K"
+        comment: 'When computing the time-mean here, the time-samples, weighted by the area of snow-covered sea ice in the grid cell, are accumulated and then divided by the sum of the weights.  Reported as "missing" in regions free of snow-covered sea ice.'
+        questions and notes: 
+        name in BMGCS: "T1"
+        units in BMGCS: "K"  # in units syntax
+        desired units: "K"   # in units syntax
+        output variable name: "tsnint"
+        standard name: "sea_ice_surface_temperature"
+        unformatted units: "K"
+        cell_methods: "time: mean (weighted by area of snow-covered sea ice)"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "tsnint"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    pr:
+        table: "CMIP5_OImon"
+        priority: 1
+        long name: "Surface Rainfall Rate into the Sea Ice Portion of the Grid Cell"
+        units: "kg m-2 s-1"
+        comment: 'where sea ice over sea: this is the the water mass per unit time falling as rain onto the sea ice portion of a grid cell divided by the area of the ocean portion of the grid cell (including both ice-free and sea-ice covered fractions).  Reported as 0. in regions free of sea ice.'
+        questions and notes: 
+        name in BMGCS: "RAIN"
+        units in BMGCS: "kg/m2/s"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "pr"
+        standard name: "rainfall_flux"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time: mean area: mean where sea_ice over sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "pr"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    prsn:
+        table: "CMIP5_OImon"
+        priority: 1
+        long name: "Surface Snowfall Rate into the Sea Ice Portion of the Grid Cell"
+        units: "kg m-2 s-1"
+        comment: 'where sea ice over sea: this is computed as the the water mass per unit time falling as snow onto the sea ice portion of a grid cell divided by the area of the ocean portion of the grid cell (including both ice-free and sea-ice covered fractions).  Reported as 0. in regions free of sea ice.'
+        questions and notes: 
+        name in BMGCS: "SNOWFL"
+        units in BMGCS: "kg/m2/s"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "prsn"
+        standard name: "snowfall_flux"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time: mean area: mean where sea_ice over sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "prsn"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+#    grFrazil:
+#        table: "CMIP5_OImon"
+#        priority: 1
+#        long name: "Frazil Sea Ice Growth (Leads) Rate"
+#        #units: "kg m-2 s-1"
+#        units: "W/m2"
+#        comment: 'the rate of change of sea ice mass due to frazil sea ice formation divided by the area of the ocean portion of the grid cell.  Reported as 0.0 in regions free of sea ice.'
+#        questions and notes: 
+#        name in BMGCS: "FRAZIL"
+#        units in BMGCS: "W/m2"  # in units syntax
+#        desired units: "W/m2"   # in units syntax
+#        output variable name: "grFrazil"
+#        standard name: "tendency_of_sea_ice_amount_due_to_frazil_ice_accumulation_in_leads"
+#        unformatted units: "kg m-2 s-1"
+#        cell_methods: "time: mean area: mean where sea"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "time"]
+#        CMOR variable name: "grFrazil"
+#        realm: "seaIce"
+#        frequency:
+#        cell_measures: "area: areacello"
+#        flag_values:
+#        flag_meanings:
+    snoToIce:
+        table: "CMIP5_OImon"
+        priority: 1
+        long name: "Snow-Ice Formation Rate"
+        units: "kg m-2 s-1"
+        comment: 'the rate of change of sea ice mass due to transformation of snow to sea ice, divided by the area of the ocean portion of the grid cell.  Reported as 0.0 in regions free of snow-covered sea ice.'
+        questions and notes: 
+        name in BMGCS: "SN2IC"
+        units in BMGCS: "kg/m2/s"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "snoToIce"
+        standard name: "tendency_of_sea_ice_amount_due_to_snow_conversion"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time: mean area: mean where sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "snoToIce"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+#    tmelt:
+#        table: "CMIP5_OImon"
+#        priority: 1
+#        long name: "Rate of Melt at Upper Surface of Sea Ice"
+#        #units: "kg m-2 s-1"
+#        units: "W/m2"
+#        comment: 'the rate of change of sea ice mass due to melting at its upper surface, divided by the area of the ocean portion of the grid cell.  Reported as 0.0 in regions free of sea ice. Does not include rate of change of snow mass.'
+#        questions and notes: 
+#        name in BMGCS: "TMELT"
+#        units in BMGCS: "W/m2"  # in units syntax
+#        desired units: "W/m2"   # in units syntax
+#        output variable name: "tmelt"
+#        standard name: "tendency_of_sea_ice_amount_due_to_surface_melting"
+#        unformatted units: "kg m-2 s-1"
+#        cell_methods: "time: mean area: mean where sea"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "time"]
+#        CMOR variable name: "tmelt"
+#        realm: "seaIce"
+#        frequency:
+#        cell_measures: "area: areacello"
+#        flag_values:
+#        flag_meanings:
+#    bmelt:
+#        table: "CMIP5_OImon"
+#        priority: 1
+#        long name: "Rate of Melt at Sea Ice Base"
+#        #units: "kg m-2 s-1"
+#        units: "W/m2"
+#        comment: 'the rate of change of sea ice mass due to melting at its lower surface, divided by the area of the ocean portion of the grid cell.  Reported as 0.0 in regions free of sea ice. '
+#        questions and notes: 
+#        name in BMGCS: "BMELT"
+#        units in BMGCS: "W/m2"  # in units syntax
+#        desired units: "W/m2"   # in units syntax
+#        output variable name: "bmelt"
+#        standard name: "tendency_of_sea_ice_amount_due_to_basal_melting"
+#        unformatted units: "kg m-2 s-1"
+#        cell_methods: "time: mean area: mean where sea"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "time"]
+#        CMOR variable name: "bmelt"
+#        realm: "seaIce"
+#        frequency:
+#        cell_measures: "area: areacello"
+#        flag_values:
+#        flag_meanings:
+    hcice:
+        table: "CMIP5_OImon"
+        priority: 2
+        long name: "Sea Ice Heat Content"
+        units: "J m-2"
+        comment: 'Ice at 0 Celsius is assumed taken to have a heat content of 0 J.  When averaging over time, this quantity is weighted by the mass of sea ice.   Reported as "missing in regions free of sea ice.  Does not include heat content of snow.'
+        questions and notes: 
+        name in BMGCS: "E2MELT"
+        units in BMGCS: "J/m2"  # in units syntax
+        desired units: "J/m2"   # in units syntax
+        output variable name: "hcice"
+        standard name: "integral_of_sea_ice_temperature_wrt_depth_expressed_as_heat_content"
+        unformatted units: "J m-2"
+        cell_methods: "time: mean (weighted by mass of sea ice)"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "hcice"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    rsdssi:
+        table: "CMIP5_OImon"
+        priority: 1
+        long name: "Downwelling Shortwave over Sea Ice"
+        units: "W m-2"
+        comment: 'the downwelling shortwave flux in regions of sea ice divided by the area of the ocean portion of the grid cell.'
+        questions and notes: 'priority was raised from 2 to 1 because snow albedo was deleted.'
+        name in BMGCS: "SWDN"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rsdssi"
+        standard name: "surface_downwelling_shortwave_flux_in_air"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean area: mean where sea_ice over sea"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rsdssi"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    rsussi:
+        table: "CMIP5_OImon"
+        priority: 1
+        long name: "Upward Shortwave over Sea Ice"
+        units: "W m-2"
+        comment: 'the upward shortwave flux in regions of sea ice divided by the area of the ocean portion of the grid cell.'
+        questions and notes: 'priority was raised from 2 to 1 because snow albedo was deleted.'
+        name in BMGCS: "SW"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rsussi"
+        standard name: "surface_upwelling_shortwave_flux_in_air"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean area: mean where sea_ice over sea"
+        positive: "up"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rsussi"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    rldssi:
+        table: "CMIP5_OImon"
+        priority: 2
+        long name: "Downwelling Long Wave over Sea Ice"
+        units: "W m-2"
+        comment: 'the downwelling longwave flux in regions of sea ice divided by the area of the ocean portion of the grid cell.'
+        questions and notes: 
+        name in BMGCS: "LWDN"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rldssi"
+        standard name: "surface_downwelling_longwave_flux_in_air"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean area: mean where sea_ice over sea"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rldssi"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    rlussi:
+        table: "CMIP5_OImon"
+        priority: 2
+        long name: "Upward Long Wave over Sea Ice"
+        units: "W m-2"
+        comment: 'the upward longwave flux in regions of sea ice divided by the area of the ocean portion of the grid cell.'
+        questions and notes: 
+        name in BMGCS: "LW"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rlussi"
+        standard name: "surface_upwelling_longwave_flux_in_air"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean area: mean where sea_ice over sea"
+        positive: "up"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rlussi"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    hfssi:
+        table: "CMIP5_OImon"
+        priority: 2
+        long name: "Surface Upward Sensible Heat Flux over Sea Ice"
+        units: "W m-2"
+        comment: 'the upward sensible heat flux in regions of sea ice divided by the area of the ocean portion of the grid cell.'
+        questions and notes: 
+        name in BMGCS: "SH"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "hfssi"
+        standard name: "surface_upward_sensible_heat_flux"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean area: mean where sea_ice over sea"
+        positive: "up"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "hfssi"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    hflssi:
+        table: "CMIP5_OImon"
+        priority: 2
+        long name: "Surface Upward Latent Heat Flux over Sea Ice"
+        units: "W m-2"
+        comment: 'the upward latent heat flux in regions of sea ice divided by the area of the ocean portion of the grid cell.'
+        questions and notes: 
+        name in BMGCS: "LH"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "hflssi"
+        standard name: "surface_upward_latent_heat_flux"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean area: mean where sea_ice over sea"
+        positive: "up"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "hflssi"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+#    transix:
+#        table: "CMIP5_OImon"
+#        priority: 1
+#        long name: "X-Component of Sea Ice Mass Transport"
+#        units: "kg s-1"
+#        comment: 'The sea ice mass transport is 0.0 in ice-free regions of the ocean.  Snow is included in calculation of mass.'
+#        questions and notes: 
+#        name in BMGCS: "U_STAR"
+#        units in BMGCS: "m/s"  # in units syntax
+#        desired units: "kg/s"   # in units syntax
+#        output variable name: "transix"
+#        standard name: "sea_ice_x_transport"
+#        unformatted units: "kg s-1"
+#        cell_methods: "time: mean"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "time"]
+#        CMOR variable name: "transix"
+#        realm: "seaIce"
+#        frequency:
+#        cell_measures: "area: areacello"
+#        flag_values:
+#        flag_meanings:
+#    transiy:
+#        table: "CMIP5_OImon"
+#        priority: 1
+#        long name: "Y-Component of Sea Ice Mass Transport"
+#        units: "kg s-1"
+#        comment: 'The sea ice mass transport is 0.0 in ice-free regions of the ocean.  Snow is included in calculation of mass.'
+#        questions and notes: 
+#        name in BMGCS: "V_STAR"
+#        units in BMGCS: "m/s"  # in units syntax
+#        desired units: "kg/s"   # in units syntax
+#        output variable name: "transiy"
+#        standard name: "sea_ice_y_transport"
+#        unformatted units: "kg s-1"
+#        cell_methods: "time: mean"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "time"]
+#        CMOR variable name: "transiy"
+#        realm: "seaIce"
+#        frequency:
+#        cell_measures: "area: areacello"
+#        flag_values:
+#        flag_meanings:
+    strairx:
+        table: "CMIP5_OImon"
+        priority: 2
+        long name: "X-Component of Atmospheric Stress On Sea Ice"
+        units: "N m-2"
+        comment: 'When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Reported as "missing" in regions free of sea ice.'
+        questions and notes: 
+        name in BMGCS: "FA_X"
+        units in BMGCS: "Pa"  # in units syntax
+        desired units: "N/m2"   # in units syntax
+        output variable name: "strairx"
+        standard name: "surface_downward_x_stress"
+        unformatted units: "N m-2"
+        cell_methods: "time: mean (weighted by area of sea ice)"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "strairx"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    strairy:
+        table: "CMIP5_OImon"
+        priority: 2
+        long name: "Y-Component of Atmospheric Stress On Sea Ice"
+        units: "N m-2"
+        comment: 'When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Reported as "missing" in regions free of sea ice.'
+        questions and notes: 
+        name in BMGCS: "FA_Y"
+        units in BMGCS: "Pa"  # in units syntax
+        desired units: "N/m2"   # in units syntax
+        output variable name: "strairy"
+        standard name: "surface_downward_y_stress"
+        unformatted units: "N m-2"
+        cell_methods: "time: mean (weighted by area of sea ice)"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "strairy"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    strocnx:
+        table: "CMIP5_OImon"
+        priority: 2
+        long name: "X-Component of Ocean Stress On Sea Ice"
+        units: "N m-2"
+        comment: 'When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Report as "missing" in regions free of sea ice.'
+        questions and notes: 
+        name in BMGCS: "FW_X"
+        units in BMGCS: "Pa"  # in units syntax
+        desired units: "N/m2"   # in units syntax
+        output variable name: "strocnx"
+        standard name: "upward_x_stress_at_sea_ice_base"
+        unformatted units: "N m-2"
+        cell_methods: "time: mean (weighted by area of sea ice)"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "strocnx"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    strocny:
+        table: "CMIP5_OImon"
+        priority: 2
+        long name: "Y-Component of Ocean Stress On Sea Ice"
+        units: "N m-2"
+        comment: 'When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Reported as "missing" in regions free of sea ice.'
+        questions and notes: 
+        name in BMGCS: "FW_Y"
+        units in BMGCS: "Pa"  # in units syntax
+        desired units: "N/m2"   # in units syntax
+        output variable name: "strocny"
+        standard name: "upward_y_stress_at_sea_ice_base"
+        unformatted units: "N m-2"
+        cell_methods: "time: mean (weighted by area of sea ice)"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "strocny"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    streng:
+        table: "CMIP5_OImon"
+        priority: 2
+        long name: "Compressive Sea Ice Strength"
+        units: "N m-1"
+        comment: 'When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Reported as "missing" in regions free of sea ice.'
+        questions and notes: 
+        name in BMGCS: "STRENGTH"
+        units in BMGCS: "Pa*m"  # in units syntax
+        desired units: "N/m"   # in units syntax
+        output variable name: "streng"
+        standard name: "compressive_strength_of_sea_ice"
+        unformatted units: "N m-1"
+        cell_methods: "time: mean (weighted by area of sea ice)"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "streng"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:

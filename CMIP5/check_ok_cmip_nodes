@@ -1,0 +1,81 @@
+#!/bin/bash -eu
+
+source ./cmip5_functions
+
+RUNNING=$(qstat | grep -P "r\d{1,2}i\dp\d" | cut -d " " -f2)
+
+now=$(date +%s)
+conv_date=`date -d "$(ls -l conversion_nodes_full.txt | cut -d " " -f6-7)" +%s`
+if [ $[$now-$conv_date] -gt 7200 ]
+then
+  :
+  python cmip_restart_bot.py /stornext/online13/ocean/simulations/CMIP/CMIP5/output/INPE/BESM-OA2-3/
+fi
+
+grep decadal conversion_nodes_full.txt| while read EXP;
+do
+  LOGYEAR=$(echo $EXP|cut -d " " -f1 | cut -d "l" -f2)
+  LOGMEMBER=$(echo $EXP| cut -d " " -f2)
+  LOGREALM=$(echo $EXP|cut -d " " -f3 | cut -c1)
+  EXPNAME_BASE=${LOGYEAR:2:4}${LOGMEMBER}${LOGREALM}
+  if [ $LOGREALM != 'l' ]
+  then
+    NUM=$(echo $EXP | cut -d " " -f4)
+    DEN=$(echo $EXP | cut -d " " -f5)
+    DONE=$(awk -vnum="$NUM" -vden="$DEN" 'BEGIN{print (num >= den)?1:0 }')
+    if [ $DONE -eq 1 ]
+    then
+      echo $EXPNAME_BASE OK
+    else
+        #MISSING=$(grep $EXPNAME_BASE conversion_nodes_full.txt|cut -d " " -f3)
+        grep $EXPNAME_BASE conversion_nodes_full.txt|cut -d " " -f3 | while read MISSING;
+        do
+          log=$(echo workdir_nodes/out/${EXPNAME_BASE}${MISSING:2:4}.*.out.txt | rev | cut -d " " -f1 | rev)
+          EXPNAME=$(echo $log|cut -d '.' -f1 | cut -d "/" -f3)
+
+            if [[ $RUNNING =~ $EXPNAME ]]
+            then
+              echo $EXPNAME RUNNING $DEN/$NUM $(echo $EXP | cut -d " " -f6)
+            else
+              if [ -e $log ]
+              then
+                if ! grep "Tempo" $log > /dev/null
+                then
+                  echo
+                  echo "***************************"
+                  echo $EXPNAME ERROR $(echo $EXP | cut -d " " -f4)/$(echo $EXP | cut -d " " -f5)
+                  NAME=$(basename $log | cut -d "." -f1)
+                  DIROUT=$(dirname $log)
+                  for output in $DIROUT/${NAME}*
+                  do
+                    if grep -i "Error" $output 
+                    then
+                      echo "==========================="
+                      echo $output
+                      OUTPUT_LOCATION=$(decode_cmip5_name $EXPNAME)
+                      echo $OUTPUT_LOCATION
+
+                      OPENING=$(grep Opening $output | tail -1)
+                      if [ "$OPENING" != "" ]
+                      then
+                        echo $OUTPUT_LOCATION/CGCM/$(echo $OPENING | cut -d " " -f2)
+                      fi
+                      echo $(grep Missing $output | tail -1)
+                      echo "==========================="
+                    fi
+                  done 
+                  echo "***************************"
+                  echo qsub workdir/set_cmip5_process-${EXPNAME}
+                  echo "***************************"
+                  echo
+                else
+                  echo $EXPNAME TODO # TODO because it's only over when data is in online14
+                fi
+              else
+                echo $EXPNAME TODO
+              fi
+            fi
+       done
+    fi
+  fi
+done

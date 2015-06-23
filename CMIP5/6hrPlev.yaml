@@ -1,0 +1,116 @@
+description:
+    outpath: "/stornext/online13/ocean/simulations/CMIP"
+    experiment_id: "decadal1960"
+    institution: "INPE"
+    source: "BESM-OA2.5.1 2014 atmosphere: CPTEC (T62L28); ocean: MOM (mom4p1_pubrel_18dec2009, 0.25-2xL50); land: SSIB"
+    calendar: "julian"
+    realization: 1
+    contact: "Dr. Paulo Nobre <paulo.nobre@cptec.inpe.br>"
+    history: ""
+    comment: ""
+    references: ""
+    #leap_year:
+    #leap_month:
+    #month_lengths:
+    model_id: "BESM-OA2.5.1"
+    forcing: "GHG, Sl" 
+    initialization_method: 1
+    physics_version: 1
+    institute_id: "INPE"
+    parent_experiment_id: "N/A"
+    branch_time: 0.0
+    parent_experiment_rip: "N/A"
+
+variables:
+    ua:
+        table: "CMIP5_6hrPlev"
+        priority: 1
+        long name: "Eastward Wind"
+        units: "m s-1"
+        comment: 
+        questions and notes: "on the following pressure levels: 850, 500, 250 hPa"
+        name in BMGCS: "UVEL"
+        units in BMGCS: "m/s"  # in units syntax
+        desired units: "m/s"   # in units syntax
+        output variable name: "ua"
+        standard name: "eastward_wind"
+        unformatted units: "m s-1"
+        cell_methods:
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "plev3", "time1"]
+        CMOR variable name: "ua"
+        realm: "atmos"
+        frequency:
+        cell_measures:
+        flag_values:
+        flag_meanings:
+    va:
+        table: "CMIP5_6hrPlev"
+        priority: 1
+        long name: "Northward Wind"
+        units: "m s-1"
+        comment: 
+        questions and notes: "on the following pressure levels: 850, 500, 250 hPa"
+        name in BMGCS: "VVEL"
+        units in BMGCS: "m/s"  # in units syntax
+        desired units: "m/s"   # in units syntax
+        output variable name: "va"
+        standard name: "northward_wind"
+        unformatted units: "m s-1"
+        cell_methods: 
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "plev3", "time1"]
+        CMOR variable name: "va"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    ta:
+        table: "CMIP5_6hrPlev"
+        priority: 1
+        long name: "Air Temperature"
+        units: "K"
+        comment: 
+        questions and notes: "on the following pressure levels: 850, 500, 250 hPa"
+        name in BMGCS: "TEMP"
+        units in BMGCS: "K"  # in units syntax
+        desired units: "K"   # in units syntax
+        output variable name: "ta"
+        standard name: "air_temperature"
+        unformatted units: "K"
+        cell_methods:
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "plev3", "time1"]
+        CMOR variable name: "ta"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    psl:
+        table: "CMIP5_6hrPlev"
+        priority: 1
+        long name: "Sea Level Pressure"
+        units: "Pa"
+        comment: 
+        questions and notes:
+        name in BMGCS: "PSLC"
+        units in BMGCS: "hPa"  # in units syntax
+        desired units: "Pa"   # in units syntax
+        output variable name: "psl"
+        standard name: "air_pressure_at_sea_level"
+        unformatted units: "Pa"
+        cell_methods: ""
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time1"]
+        CMOR variable name: "psl"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:

@@ -1,0 +1,47 @@
+description:
+    outpath: "/stornext/online13/ocean/simulations/CMIP"
+    experiment_id: "decadal1960"
+    institution: "INPE"
+    source: "BESM-OA2.5.1 2014 atmosphere: CPTEC (T62L28); ocean: MOM (mom4p1_pubrel_18dec2009, 0.25-2xL50); land: SSIB"
+    calendar: "julian"
+    realization: 1
+    contact: "Dr. Paulo Nobre <paulo.nobre@cptec.inpe.br>"
+    history: ""
+    comment: ""
+    references: ""
+    #leap_year:
+    #leap_month:
+    #month_lengths:
+    model_id: "BESM-OA2.5.1"
+    forcing: "GHG, Sl" 
+    initialization_method: 1
+    physics_version: 1
+    institute_id: "INPE"
+    parent_experiment_id: "N/A"
+    branch_time: 0.0
+    parent_experiment_rip: "N/A"
+
+variables:
+    snw:
+        table: "CMIP5_LImon"
+        priority: 1
+        long name: "Surface Snow Amount"
+        units: "kg m-2"
+        comment: "Computed as the mass of surface snow on the land portion of the grid cell divided by the land area in the grid cell; reported as 0.0 where the land fraction is 0; excluded is snow on vegetation canopy or on sea ice."
+        questions and notes:
+        name in BMGCS: "NEVE"
+        units in BMGCS: "kg/m2/day"  # in units syntax
+        desired units: "kg/m2"   # in units syntax
+        output variable name: "snw"
+        standard name: "surface_snow_amount"
+        unformatted units: "kg m-2"
+        cell_methods: "time: mean area: mean where land"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "snw"
+        realm: "land"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:

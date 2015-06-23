@@ -1,0 +1,235 @@
+#!/bin/bash -eu
+
+FIXED="cmp034 cmp038 cmp042"
+MAUNA="cmp035 cmp039 cmp043"
+RCP45="cmp036 cmp040 cmp044"
+RCP85="cmp037 cmp041 cmp045"
+TABLES="Omon.yaml OImon.yaml Oclim.yaml Amon.yaml 3hr.yaml 6hrLev.yaml 6hrPlev.yaml LImon.yaml Lmon.yaml day.yaml"
+
+FIXED_exps="34 38 42"
+MAUNA_exps="35 39 43"
+RCP45_exps="36 40 44"
+RCP85_exps="37 41 45"
+
+exps[34]=decadal1960 # (r={1-10}i1p1)
+exps[35]=decadal1960 # (r=1i1p2)
+exps[36]=decadal1960 # (r={1-10}i1p3)
+exps[37]=decadal1960 # (r={1-10}i1p4)
+
+exps[38]=decadal1980 # (r={1-10}i1p1)
+exps[39]=decadal1980 # (r=1i1p2)
+exps[40]=decadal1980 # (r={1-10}i1p3)
+exps[41]=decadal1980 # (r={1-10}i1p2)
+
+exps[42]=decadal2005 # (r={1-10}i1p1)
+exps[43]=decadal2005 # (r=1i1p2)
+exps[44]=decadal2005 # (r={1-10}i1p3)
+exps[45]=decadal2005 # (r={1-10}i1p4)
+
+compose_cmip5_name () {
+  local EXP_PROPS=$(echo $1 | sed "s/[^ ]*simulations\/\(.*\)/\1/g")
+  local EXP=`echo $EXP_PROPS | cut -d '/' -f1 | cut -d "p" -f2 | xargs -I b seq b b`
+  local YEAR=`echo $EXP_PROPS | cut -d '/' -f4 | cut -c 3-`
+  local IC=$(echo $EXP_PROPS | cut -d '/' -f5 | xargs -I b seq b b)
+  local REALM=`echo $EXP_PROPS | cut -d '/' -f6`
+  if [[ $MAUNA_exps =~ $EXP ]]; then local PHYSICS=1; fi
+  if [[ $FIXED_exps =~ $EXP ]]; then local PHYSICS=2; fi
+  if [[ $RCP45_exps =~ $EXP ]]; then local PHYSICS=3; fi
+  if [[ $RCP85_exps =~ $EXP ]]; then local PHYSICS=4; fi
+#  local PHYSICS=`[[ $FIXED_exps =~ $EXP ]] && echo '2' || [[ $MAUNA_exps =~ $EXP ]] && echo '1' || [[ $RCP45_exps =~ $EXP ]] && echo '3' || [[ $RCP85_exps =~ $EXP ]] && echo '4'`
+  local DURATION=`[[ "34 35 36 37 38 39 40 41 42 43 44 45" =~ $EXP ]] && echo '100' || echo '30'`
+
+  echo ${YEAR}_r${IC}i1p${PHYSICS}_${REALM:0:1}
+}
+
+extract_cmip5_props_g4c () {
+  local EXP_PROPS=$(echo $1 | sed "s/[^ ]*cpld2.2\/\(.*\)/\1/g")
+  local EXP=`echo ${EXP_PROPS/*cmp/} | cut -f1 -d_ | cut -f1 -d/ | xargs -I b seq b b`
+  local YEAR=`echo ${EXP_PROPS/.cmp*/} | cut -c 5-8`
+#  local IC=$(echo $EXP_PROPS | cut -d '_' -f2 | cut -d '/' -f1)
+  local IC=`[[ "\`echo cmp${EXP_PROPS/*cmp/}| cut -f1 -d/\`" =~ "_" ]] && echo cmp${EXP_PROPS/*cmp/}| cut -f1 -d/|cut -f2 -d_ || echo '1'`
+  local INTEGRATION=1
+  local REALM=`echo $EXP_PROPS | cut -d '/' -f6`
+  if [[ $MAUNA_exps =~ $EXP ]]; then local PHYSICS=1; fi
+  if [[ $FIXED_exps =~ $EXP ]]; then local PHYSICS=2; fi
+  if [[ $RCP45_exps =~ $EXP ]]; then local PHYSICS=3; fi
+  if [[ $RCP85_exps =~ $EXP ]]; then local PHYSICS=4; fi
+#  local PHYSICS=`[[ $FIXED_exps =~ $EXP ]] && echo '2' || [[ $MAUNA_exps =~ $EXP ]] && echo '1' || [[ $RCP45_exps =~ $EXP ]] && echo '3' || [[ $RCP85_exps =~ $EXP ]] && echo '4'`
+  local DURATION=`[[ "34 35 36 37 38 39 40 41 42 43 44 45" =~ $EXP ]] && echo '100' || echo '30'`
+
+  echo "$EXP|$YEAR|$IC|$INTEGRATION|$PHYSICS|$REALM|$DURATION"
+}
+
+compose_cmip5_name_g4c () {
+  local EXP_PROPS=$(extract_cmip5_props_g4c $1)
+  local YEAR=$(echo $EXP_PROPS | cut -d "|" -f2)
+  local IC=$(echo $EXP_PROPS | cut -d "|" -f3)
+  local INTEGRATION=$(echo $EXP_PROPS | cut -d "|" -f4)
+  local PHYSICS=$(echo $EXP_PROPS | cut -d "|" -f5)
+
+  echo ${YEAR}_r${IC}i${INTEGRATION}p${PHYSICS}
+}
+
+compose_cmip5_name_full () {
+  local EXP_PROPS=$(echo $1 | sed "s/[^ ]*simulations\/\(.*\)/\1/g")
+  local EXP=`echo $EXP_PROPS | cut -d '/' -f1 | cut -d "p" -f2 | xargs -I b seq b b`
+  local YEAR=`echo $EXP_PROPS | cut -d '/' -f4 | cut -c 5-`
+  local IC=$(echo $EXP_PROPS | cut -d '/' -f5 | xargs -I b seq b b)
+  local REALM=`echo $EXP_PROPS | cut -d '/' -f6`
+  if [[ $MAUNA_exps =~ $EXP ]]; then local PHYSICS=1; fi
+  if [[ $FIXED_exps =~ $EXP ]]; then local PHYSICS=2; fi
+  if [[ $RCP45_exps =~ $EXP ]]; then local PHYSICS=3; fi
+  if [[ $RCP85_exps =~ $EXP ]]; then local PHYSICS=4; fi
+#  local PHYSICS=`[[ $FIXED_exps =~ $EXP ]] && echo '2' || [[ $MAUNA_exps =~ $EXP ]] && echo '1' || [[ $RCP45_exps =~ $EXP ]] && echo '3' || [[ $RCP85_exps =~ $EXP ]] && echo '4'`
+  local DURATION=`[[ "34 35 36 37 38 39 40 41 42 43 44 45" =~ $EXP ]] && echo '100' || echo '30'`
+
+  echo ${YEAR}r${IC}i1p${PHYSICS}${REALM:0:1}
+}
+
+decode_cmip5_name () {
+  local PHYSICS=$(echo $1 | cut -d "p" -f2 | cut -c1)
+  local YEAR=$(echo $1 | cut -d "r" -f1 | tr -d '_')
+  if [ $YEAR -lt 100 ]
+  then
+    if [ $YEAR -lt 60 ]
+    then
+      YEAR=20${YEAR}
+    else
+      YEAR=19${YEAR}
+    fi
+  fi
+  
+  local IC=$(printf "%02d" `echo $1 | cut -d "r" -f2 | cut -d "i" -f1`)
+  local REALM=`[[ $(echo $1 | cut -d "p" -f2 | tr -d "_" | cut -c2) = "a" ]] && echo 'atmos' || echo 'ocean'`
+
+  case $PHYSICS in
+1)POSSIBLES="$MAUNA_exps";;
+2)POSSIBLES="$FIXED_exps";;
+3)POSSIBLES="$RCP45_exps";;
+4)POSSIBLES="$RCP85_exps";;
+*)echo "ERRO NA ESCOLHA DA PHYSICS"; exit 1;;
+  esac
+
+  for exp in $POSSIBLES
+  do
+    if [ ${exps[$exp]} = decadal${YEAR} ]
+    then
+      local EXP=$(printf "%03d" $exp)
+    fi
+  done
+
+  echo simulations/cmp${EXP}/dataout/ic12/ic${YEAR}/${IC}/${REALM}
+}
+
+decode_cmip5_name_g4c () {
+  local PHYSICS=$(echo $1 | cut -d "p" -f2 | cut -c1)
+  local YEAR=$(echo $1 | cut -d "r" -f1 | tr -d '_')
+  if [ $YEAR -lt 100 ]
+  then
+    if [ $YEAR -lt 60 ]
+    then
+      YEAR=20${YEAR}
+    else
+      YEAR=19${YEAR}
+    fi
+  fi
+  
+  local IC=$(printf "%02d" `echo $1 | cut -d "r" -f2 | cut -d "i" -f1`)
+  local REALM=`[[ $(echo $1 | cut -d "p" -f2 | tr -d "_" | cut -c2) = "a" ]] && echo 'atmos' || echo 'ocean'`
+
+  case $PHYSICS in
+1)POSSIBLES="$MAUNA_exps";;
+2)POSSIBLES="$FIXED_exps";;
+3)POSSIBLES="$RCP45_exps";;
+4)POSSIBLES="$RCP85_exps";;
+*)echo "ERRO NA ESCOLHA DA PHYSICS"; exit 1;;
+  esac
+
+  for exp in $POSSIBLES
+  do
+    if [ ${exps[$exp]} = decadal${YEAR} ]
+    then
+      local EXP=$(printf "%03d" $exp)
+    fi
+  done
+
+  echo work${YEAR}12${IC}.cmp${EXP}_$(seq ${IC} ${IC})
+}
+
+# copy_cmip5_data $INPUT_DIR $WORK_PATH $REALM $START $END
+copy_cmip5_data () {
+  local INPUT_DIR="$1"
+  local WORK_PATH="$2"
+  local REALM="$3"
+  local START="$4"
+  local END="$5"
+  local CMP_DATE=""
+  local CMP_DATE_END=""
+  local FILEDATE=""
+  local FILES=""
+  WORK_PATH=$(readlink -e $WORK_PATH)
+
+  mkdir -p $WORK_PATH
+  pushd $INPUT_DIR
+  # find . -depth -print | cpio -pdv $WORK_PATH
+  CMP_DATE=$(echo $START | tr -d '/')
+  CMP_DATE_END=$(echo $END | tr -d '/')
+  FILES=$(find . -depth -print | sort)
+
+  if [ $REALM = "atmos" ]
+  then
+    local BEGIN=$(echo -e "$FILES" | grep -n ${CMP_DATE}0100C | cut -d ':' -f1 | head -1)
+    local FINISH=$(echo -e "$FILES" | grep -n ${CMP_DATE_END}0100C | cut -d ':' -f1 | tail -1)
+    FILES="$(echo -e "$FILES" | tail -n +$BEGIN | head -n `echo $FINISH-$BEGIN|bc -l`)"
+  else
+    if [ $REALM = "ocean" ]
+    then
+      CMP_DATE_END=$(date -d "${CMP_DATE_END}01 +1 month" +%Y%m)
+    fi
+  fi
+
+  for file in $FILES
+  do
+    if [ $REALM = "atmos" ]
+    then
+      FILEDATE=$(echo $file | cut -d "C" -f2 | cut -c11-16)
+    else
+      if [ "${file##*.}" = "nc" ]
+      then
+        FILEDATE=$(echo $file | sed "s/[^ ]*_\(.*\)_\(.*\).nc/\1\2/g" )
+        #FILEDATE=$(date -d "${FILEDATE}01 -1 month" +%Y%m)
+      else
+        FILEDATE=000000
+      fi
+    fi
+    if [ $FILEDATE -ge $CMP_DATE -a $FILEDATE -le $CMP_DATE_END ]
+    then
+      rsync -v $file $WORK_PATH/$file &
+    fi
+  done
+  wait
+  popd
+}
+
+prepare_to_send () {
+  INPUT_DIR="/stornext/online13/ocean/simulations/CMIP/CMIP5/"
+  OUTPUT_DIR="/stornext/online14/ocean/cmip5_send/"
+
+  pushd $INPUT_DIR
+  find . -iname "*.nc" -print | while read FILE;
+  do
+    path=$(readlink -e "$FILE" | xargs dirname)
+    path=${path##$INPUT_DIR}
+    filename=$(basename "$FILE")
+
+    mkdir -p ${OUTPUT_DIR}/${path}
+    if [ -e ${OUTPUT_DIR}/${path}/${filename}.bz2 ]
+    then
+      echo ${INPUT_DIR}/${FILE} already copied.
+    else
+      echo Copying ${INPUT_DIR}/${FILE}
+      bzip2 -k -c -z $INPUT_DIR/$FILE > $OUTPUT_DIR/${path}/${filename}.bz2
+    fi
+  done
+  popd
+}

@@ -1,0 +1,806 @@
+description:
+    outpath: "/stornext/online13/ocean/simulations/CMIP"
+    experiment_id: "decadal1960"
+    institution: "INPE"
+    source: "BESM-OA2.5.1 2014 atmosphere: CPTEC (T62L28); ocean: MOM (mom4p1_pubrel_18dec2009, 0.25-2xL50); land: SSIB"
+    calendar: "julian"
+    realization: 1
+    contact: "Dr. Paulo Nobre <paulo.nobre@cptec.inpe.br>"
+    history: ""
+    comment: ""
+    references: ""
+    #leap_year:
+    #leap_month:
+    #month_lengths:
+    model_id: "BESM-OA2.5.1"
+    forcing: "GHG, Sl" 
+    initialization_method: 1
+    physics_version: 1
+    institute_id: "INPE"
+    parent_experiment_id: "N/A"
+    branch_time: 0.0
+    parent_experiment_rip: "N/A"
+
+variables:
+    huss:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Near-Surface Specific Humidity"
+        units: "1"
+        comment: 
+        questions and notes: "normally, report this at 2 meters above the surface"
+        name in BMGCS: "Q2MT"
+        units in BMGCS: "1"  # in units syntax
+        desired units: "1"   # in units syntax
+        output variable name: "huss"
+        standard name: "specific_humidity"
+        unformatted units: "1"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time", "height2m"]
+        CMOR variable name: "huss"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    tas:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Near-Surface Air Temperature"
+        units: "K"
+        comment: 
+        questions and notes: "normally report this at 2 meters above the surface"
+        name in BMGCS: "T2MT"
+        units in BMGCS: "K"  # in units syntax
+        desired units: "K"   # in units syntax
+        output variable name: "tas"
+        standard name: "air_temperature"
+        unformatted units: "K"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time", "height2m"]
+        CMOR variable name: "tas"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    pr:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Precipitation"
+        units: "kg m-2 s-1"
+        comment: "at surface; includes both liquid and solid phases from all types of clouds (both large-scale and convective)"
+        questions and notes:
+        name in BMGCS: "PREC"
+        units in BMGCS: "kg/m2/day"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "pr"
+        standard name: "precipitation_flux"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "pr"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    psl:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Sea Level Pressure"
+        units: "Pa"
+        comment: 
+        questions and notes:
+        name in BMGCS: "SPMT"
+        units in BMGCS: "mbar-1000"  # in units syntax
+        desired units: "Pa"   # in units syntax
+        output variable name: "psl"
+        standard name: "air_pressure_at_sea_level"
+        unformatted units: "Pa"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "psl"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    sfcWind:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Daily-Mean Near-Surface Wind Speed"
+        units: "m s-1"
+        comment: 
+        questions and notes: "normally report this at 10 meters above the surface"
+        name in BMGCS: "S10M"
+        units in BMGCS: "m/s"  # in units syntax
+        desired units: "m/s"   # in units syntax
+        output variable name: "sfcWind"
+        standard name: "wind_speed"
+        unformatted units: "m s-1"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time", "height10m"]
+        CMOR variable name: "sfcWind"
+        realm: "atmos"
+        frequency:
+        cell_measures:
+        flag_values:
+        flag_meanings:
+    tossq:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Square of Sea Surface Temperature"
+        units: "K2"
+        comment: "square of temperature of liquid ocean, averaged over the day."
+        questions and notes: "Report on the ocean grid.  This variable appears in WGOMD Table 2.2"
+        name in BMGCS: "potential_temp"
+        units in BMGCS: "K^2"  # in units syntax
+        desired units: "K^2"   # in units syntax
+        output variable name: "tossq"
+        standard name: "square_of_sea_surface_temperature"
+        unformatted units: "K2"
+        cell_methods: "time:mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "tossq"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    tos:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Sea Surface Temperature"
+        units: "K"
+        comment: 'temperature of liquid ocean.  Note that the correct standard_name for this variable is "sea_surface_temperature", not "surface_temperature", but this was discovered too late to correct.  To maintain consistency across CMIP5 models, the wrong standard_name will continue to be used.'
+        questions and notes: "Report on the ocean grid.  This variable appears in WGOMD Table 2.2"
+        name in BMGCS: "surface_potential_temp"
+        units in BMGCS: "K"  # in units syntax
+        desired units: "K"   # in units syntax
+        output variable name: "tos"
+        standard name: "surface_temperature"
+        unformatted units: "K"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "tos"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    omldamax:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Daily Maximum Ocean Mixed Layer Thickness Defined by Mixing Scheme "
+        units: "m"
+        comment: 
+        questions and notes: "Report on the ocean grid.  This variable appears in WGOMD Table 2.2"
+        name in BMGCS: "hblt"
+        units in BMGCS: "m"  # in units syntax
+        desired units: "m"   # in units syntax
+        output variable name: "omldamax"
+        standard name: "ocean_mixed_layer_thickness_defined_by_mixing_scheme"
+        unformatted units: "m "
+        cell_methods: "time: maximum"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "omldamax"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    rhs:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Near-Surface Relative Humidity"
+        units: "%"
+        comment: "This is the relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C."
+        questions and notes: "normally report this at 2 meters above the surface"
+        name in BMGCS: "RSMT"
+        units in BMGCS: "1"  # in units syntax
+        desired units: "%"   # in units syntax
+        output variable name: "rhs"
+        standard name: "relative_humidity"
+        unformatted units: "%"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time", "height2m"]
+        CMOR variable name: "rhs"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    clt:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Total Cloud Fraction"
+        units: "%"
+        comment: "for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Includes both large-scale and convective cloud."
+        questions and notes:
+        name in BMGCS: "CBNV"
+        units in BMGCS: "1"  # in units syntax
+        desired units: "%"   # in units syntax
+        output variable name: "clt"
+        standard name: "cloud_area_fraction"
+        unformatted units: "%"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "clt"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    tslsi:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Surface Temperature Where Land or Sea Ice"
+        units: "K"
+        comment: '"skin" temperature of all surfaces except open ocean.  '
+        questions and notes:
+        name in BMGCS: "STTM"
+        units in BMGCS: "K"  # in units syntax
+        desired units: "K"   # in units syntax
+        output variable name: "tslsi"
+        standard name: "surface_temperature"
+        unformatted units: "K"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "tslsi"
+        realm: "land"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    snw:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Surface Snow Amount"
+        units: "kg m-2"
+        comment: "the mass of surface snow on the land portion of the grid cell divided by the land area in the grid cell; reported as 0.0 where the land fraction is 0; excludes snow on vegetation canopy or on sea ice."
+        questions and notes:
+        name in BMGCS: "NEVE"
+        units in BMGCS: "kg/m2"  # in units syntax
+        desired units: "kg/m2"   # in units syntax
+        output variable name: "snw"
+        standard name: "surface_snow_amount"
+        unformatted units: "kg m-2"
+        cell_methods: "time: mean area: mean where land"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "snw"
+        realm: "land"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    prc:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Convective Precipitation"
+        units: "kg m-2 s-1"
+        comment: "at surface; includes both liquid and solid phases."
+        questions and notes:
+        name in BMGCS: "PRCV"
+        units in BMGCS: "kg/m2/day"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "prc"
+        standard name: "convective_precipitation_flux"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "prc"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    mrro:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Total Runoff"
+        units: "kg m-2 s-1"
+        comment: 'computed as the total runoff (including "drainage" through the base of the soil model) leaving the land portion of the grid cell divided by the land area in the grid cell.'
+        questions and notes:
+        name in BMGCS: "RNOF"
+        units in BMGCS: "kg/m2/s"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "mrro"
+        standard name: "runoff_flux"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time: mean area: mean where land "
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "mrro"
+        realm: "land"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    uas:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Eastward Near-Surface Wind"
+        units: "m s-1"
+        comment: 
+        questions and notes: "normally, report this at 10 meters above the surface"
+        name in BMGCS: "U10T"
+        units in BMGCS: "m/s"  # in units syntax
+        desired units: "m/s"   # in units syntax
+        output variable name: "uas"
+        standard name: "eastward_wind"
+        unformatted units: "m s-1"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time", "height10m"]
+        CMOR variable name: "uas"
+        realm: "atmos"
+        frequency:
+        cell_measures:
+        flag_values:
+        flag_meanings:
+    vas:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Northward Near-Surface Wind"
+        units: "m s-1"
+        comment: 
+        questions and notes: "normally, report this at 10 meters above the surface"
+        name in BMGCS: "V10T"
+        units in BMGCS: "m/s"  # in units syntax
+        desired units: "m/s"   # in units syntax
+        output variable name: "vas"
+        standard name: "northward_wind"
+        unformatted units: "m s-1"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time", "height10m"]
+        CMOR variable name: "vas"
+        realm: "atmos"
+        frequency:
+        cell_measures:
+        flag_values:
+        flag_meanings:
+    hfls:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Surface Upward Latent Heat Flux"
+        units: "W m-2"
+        comment: 
+        questions and notes:
+        name in BMGCS: "CLSF"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "hfls"
+        standard name: "surface_upward_latent_heat_flux"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean"
+        positive: "up"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "hfls"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    hfss:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Surface Upward Sensible Heat Flux"
+        units: "W m-2"
+        comment: 
+        questions and notes:
+        name in BMGCS: "CSSF"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "hfss"
+        standard name: "surface_upward_sensible_heat_flux"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean"
+        positive: "up"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "hfss"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    rlds:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Surface Downwelling Longwave Radiation"
+        units: "W m-2"
+        comment: 
+        questions and notes:
+        name in BMGCS: "OLIS"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rlds"
+        standard name: "surface_downwelling_longwave_flux_in_air"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rlds"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    rlus:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Surface Upwelling Longwave Radiation"
+        units: "W m-2"
+        comment: 
+        questions and notes:
+        name in BMGCS: "OLES"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rlus"
+        standard name: "surface_upwelling_longwave_flux_in_air"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean"
+        positive: "up"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rlus"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    rsds:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Surface Downwelling Shortwave Radiation"
+        units: "W m-2"
+        comment: 
+        questions and notes:
+        name in BMGCS: "OCIS"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rsds"
+        standard name: "surface_downwelling_shortwave_flux_in_air"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean"
+        positive: "down"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rsds"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    rsus:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Surface Upwelling Shortwave Radiation"
+        units: "W m-2"
+        comment: 
+        questions and notes:
+        name in BMGCS: "OCES"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rsus"
+        standard name: "surface_upwelling_shortwave_flux_in_air"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean"
+        positive: "up"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rsus"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    rlut:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "TOA Outgoing Longwave Radiation"
+        units: "W m-2"
+        comment: "at the top of the atmosphere."
+        questions and notes:
+        name in BMGCS: "ROLE"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "rlut"
+        standard name: "toa_outgoing_longwave_flux"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean"
+        positive: "up"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "rlut"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    usi:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "X-Component of Sea Ice Velocity"
+        units: "m s-1"
+        comment: 'Reported as "missing" in regions free of sea ice.'
+        questions and notes: "Report on ocean's grid.  "
+        name in BMGCS: "UI"
+        units in BMGCS: "m/s"  # in units syntax
+        desired units: "m/s"   # in units syntax
+        output variable name: "usi"
+        standard name: "sea_ice_x_velocity"
+        unformatted units: "m s-1"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "usi"
+        realm: "seaIce"
+        frequency:
+        cell_measures:
+        flag_values:
+        flag_meanings:
+    vsi:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Y-Component of Sea Ice Velocity"
+        units: "m s-1"
+        comment: 'Reported as "missing" in regions free of sea ice.'
+        questions and notes: "Report on ocean's grid."
+        name in BMGCS: "VI"
+        units in BMGCS: "m/s"  # in units syntax
+        desired units: "m/s"   # in units syntax
+        output variable name: "vsi"
+        standard name: "sea_ice_y_velocity"
+        unformatted units: "m s-1"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "vsi"
+        realm: "seaIce"
+        frequency:
+        cell_measures: 
+        flag_values:
+        flag_meanings:
+    sic:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Sea Ice Area Fraction"
+        units: "%"
+        comment: "fraction of grid cell covered by sea ice."
+        questions and notes: "Report on ocean's grid."
+        name in BMGCS: "CN"
+        units in BMGCS: "1"  # in units syntax
+        desired units: "%"   # in units syntax
+        output variable name: "sic"
+        standard name: "sea_ice_area_fraction"
+        unformatted units: "%"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "sic"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    sit:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Sea Ice Thickness"
+        units: "m"
+        comment: "the mean thickness of sea ice in the ocean portion of the grid cell (averaging over the entire ocean portion, including the ice-free fraction).  Reported as 0.0 in regions free of sea ice."
+        questions and notes: "Report on ocean's grid."
+        name in BMGCS: "HI"
+        units in BMGCS: "m"  # in units syntax
+        desired units: "m"   # in units syntax
+        output variable name: "sit"
+        standard name: "sea_ice_thickness"
+        unformatted units: "m"
+        cell_methods: "time: mean area: mean where sea"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "sit"
+        realm: "seaIce"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:
+    ta:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Air Temperature"
+        units: "K"
+        comment: 
+        questions and notes:
+        name in BMGCS: "ATMT"
+        units in BMGCS: "K"  # in units syntax
+        desired units: "K"   # in units syntax
+        output variable name: "ta"
+        standard name: "air_temperature"
+        unformatted units: "K"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "plev8", "time"]
+        CMOR variable name: "ta"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    hur:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Relative Humidity"
+        units: "%"
+        comment: "This is the relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C."
+        questions and notes:
+        name in BMGCS: "RHMT"
+        units in BMGCS: "%"  # in units syntax
+        desired units: "%"   # in units syntax
+        output variable name: "hur"
+        standard name: "relative_humidity"
+        unformatted units: "%"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "plev8", "time"]
+        CMOR variable name: "hur"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    hus:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Specific Humidity"
+        units: "1"
+        comment: 
+        questions and notes:
+        name in BMGCS: "SHMT"
+        units in BMGCS: "1"  # in units syntax
+        desired units: "1"   # in units syntax
+        output variable name: "hus"
+        standard name: "specific_humidity"
+        unformatted units: "1"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "plev8", "time"]
+        CMOR variable name: "hus"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    wap:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "omega (=dp/dt)"
+        units: "Pa s-1"
+        comment: 'commonly referred to as "omega", this represents the vertical component of velocity in pressure coordinates (positive down)'
+        questions and notes:
+        name in BMGCS: "OMTM"
+        units in BMGCS: "cbar/s"  # in units syntax
+        desired units: "Pa/s"   # in units syntax
+        output variable name: "wap"
+        standard name: "lagrangian_tendency_of_air_pressure"
+        unformatted units: "Pa s-1"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "plev8", "time"]
+        CMOR variable name: "wap"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    va:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Northward Wind"
+        units: "m s-1 "
+        comment: 
+        questions and notes:
+        name in BMGCS: "VVMT"
+        units in BMGCS: "m/s"  # in units syntax
+        desired units: "m/s"   # in units syntax
+        output variable name: "va"
+        standard name: "northward_wind"
+        unformatted units: "m s-1 "
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "plev8", "time"]
+        CMOR variable name: "va"
+        realm: "atmos"
+        frequency:
+        cell_measures:
+        flag_values:
+        flag_meanings:
+    ua:
+        table: "CMIP5_day"
+        priority: 1
+        long name: "Eastward Wind"
+        units: "m s-1 "
+        comment: 
+        questions and notes:
+        name in BMGCS: "UVMT"
+        units in BMGCS: "m/s"  # in units syntax
+        desired units: "m/s"   # in units syntax
+        output variable name: "ua"
+        standard name: "eastward_wind"
+        unformatted units: "m s-1 "
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "plev8", "time"]
+        CMOR variable name: "ua"
+        realm: "atmos"
+        frequency:
+        cell_measures:
+        flag_values:
+        flag_meanings:
+    zg:
+        table: "CMIP5_day"
+        priority: 2
+        long name: "Geopotential Height"
+        units: "m"
+        comment: 
+        questions and notes:
+        name in BMGCS: "GHMT"
+        units in BMGCS: "m"  # in units syntax
+        desired units: "m"   # in units syntax
+        output variable name: "zg"
+        standard name: "geopotential_height"
+        unformatted units: "m"
+        cell_methods: "time: mean"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "plev8", "time"]
+        CMOR variable name: "zg"
+        realm: "atmos"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:

@@ -1,0 +1,9 @@
+#!/bin/bash -eu
+
+source cmip5_functions
+
+FINISHED=$(./check_ok_cmip | grep OK | cut -d " " -f1)
+for exp in $FINISHED
+do
+  rm -rf $WORK_HOME/$(decode_cmip5_name $exp) &
+done

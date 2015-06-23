@@ -1,0 +1,23 @@
+    geo_heat:
+        table: "CMIP5_Omon"
+        priority: 2
+        long name: "Upward Geothermal Heat Flux at Sea Floor "
+        units: "W m-2"
+        comment: 
+        questions and notes: 'If this field is time-invariant, then save it instead as one of your "fixed" fields (see the fx table)' 
+        name in BMGCS: "geo_heat"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "hfgeou"
+        standard name: "upward_geothermal_heat_flux_at_sea_floor"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean area: mean where sea"
+        positive: "up"
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "hfgeou"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello"
+        flag_values:
+        flag_meanings:

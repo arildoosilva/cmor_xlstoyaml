@@ -1,0 +1,30 @@
+#!/bin/bash -e
+
+  if [ -z "$1" ]
+  then
+    echo "ERROR: set input dir"
+    exit 1
+  fi
+
+  INPUT_DIR="$1"
+  INPUT_BASE="/stornext/online13/ocean/simulations/CMIP/CMIP5/"
+  OUTPUT_DIR="/stornext/online14/ocean/cmip5_send/"
+
+  pushd $INPUT_DIR
+  find . -iname "*.nc" -print | sort | while read FILE;
+  do
+    path=$(readlink -e "$FILE" | xargs dirname)
+    path=${path##$INPUT_BASE}
+    filename=$(basename "$FILE")
+
+    mkdir -p ${OUTPUT_DIR}/${path}
+    if [ -e ${OUTPUT_DIR}/${path}/${filename}.bz2 ]
+    then
+      # TODO: need to test more!
+      echo ${INPUT_DIR}/${FILE} already copied.
+    else
+      echo Copying ${INPUT_DIR}/${FILE}
+      bzip2 -k -c -z $INPUT_DIR/$FILE > $OUTPUT_DIR/${path}/${filename}.bz2
+    fi
+  done
+  popd

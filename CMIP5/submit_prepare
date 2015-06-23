@@ -1,0 +1,41 @@
+#!/bin/bash -exu
+
+SCRIPT=$(readlink -e `dirname $0`)
+workdir=$SCRIPT/workdir_prep
+RUNTM=`date +'%d_%H:%M'`
+
+mkdir -p $workdir/out
+
+find /stornext/online15/ocean/simulations/exp091/CMIP5/output/INPE/BESM-OA2-3-1/ -maxdepth 1 -mindepth 1 -type d -print | while read EXP
+#find /stornext/online13/ocean/simulations/CMIP/CMIP5/output/INPE/BESM-OA2-3/ -maxdepth 1 -mindepth 1 -type d -print | while read EXP
+do
+  BNAME=$(basename $EXP)
+#  if [ $BNAME == "decadal" ] #-o $BNAME == "decadal1980" -o $BNAME == "decadal2005" ]
+#  then
+
+    find $EXP -maxdepth 1 -mindepth 1 -type d -print | while read FREQ
+    do
+      NAME_UID=$(basename $EXP | cut -d 'l' -f2)_$(basename $FREQ)
+      cat <<EOT2> ${workdir}/set_cmip5_prep-${NAME_UID}
+#!/bin/bash -e
+#PBS -o ${workdir}/out/${NAME_UID}.${RUNTM}.out.txt
+#PBS -j oe
+#PBS -q pesq.q@aux20-eth4
+#PBS -S /bin/bash -eu
+#PBS -V
+#PBS -A CCST
+#PBS -N p_${NAME_UID}
+
+${SCRIPT}/prepare_to_send $FREQ
+
+EOT2
+
+      chmod 740 ${workdir}/set_cmip5_prep-${NAME_UID}
+
+      echo "qsub ${workdir}/set_cmip5_prep-${NAME_UID}"
+      export JobIDcopy=`qsub ${workdir}/set_cmip5_prep-${NAME_UID}`
+      echo "JobIDcopy: ${JobIDcopy}"
+    done
+
+#  fi
+done

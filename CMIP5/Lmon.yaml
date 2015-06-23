@@ -1,0 +1,93 @@
+description:
+    outpath: "/stornext/online13/ocean/simulations/CMIP"
+    experiment_id: "decadal1960"
+    institution: "INPE"
+    source: "BESM-OA2.5.1 2014 atmosphere: CPTEC (T62L28); ocean: MOM (mom4p1_pubrel_18dec2009, 0.25-2xL50); land: SSIB"
+    calendar: "julian"
+    realization: 1
+    contact: "Dr. Paulo Nobre <paulo.nobre@cptec.inpe.br>"
+    history: ""
+    comment: ""
+    references: ""
+    #leap_year:
+    #leap_month:
+    #month_lengths:
+    model_id: "BESM-OA2.5.1"
+    forcing: "GHG, Sl" 
+    initialization_method: 1
+    physics_version: 1
+    institute_id: "INPE"
+    parent_experiment_id: "N/A"
+    branch_time: 0.0
+    parent_experiment_rip: "N/A"
+
+variables:
+    mrsos:
+        table: "CMIP5_Lmon"
+        priority: 1
+        long name: "Moisture in Upper Portion of Soil Column"
+        units: "kg m-2"
+        comment: "the mass of water in all phases in a thin surface soil layer."
+        questions and notes: "integrate over uppermost 10 cm"
+        name in BMGCS: "USSL"
+        units in BMGCS: ""  # in units syntax
+        desired units: ""   # in units syntax
+        output variable name: "mrsos"
+        standard name: "moisture_content_of_soil_layer"
+        unformatted units: "kg m-2"
+        cell_methods: "time: mean area: mean where land"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time", "sdepth1"]
+        CMOR variable name: "mrsos"
+        realm: "land"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:
+    #mrso:
+    #    table: "CMIP5_Lmon"
+    #    priority: 1
+    #    long name: "Total Soil Moisture Content"
+    #    units: "kg m-2"
+    #    comment: "the mass per unit area  (summed over all soil layers) of water in all phases."
+    #    questions and notes: 
+    #    name in BMGCS: "SOIC"
+    #    units in BMGCS: "kg/m2"  # in units syntax
+    #    desired units: "kg/m2"   # in units syntax
+    #    output variable name: "mrso"
+    #    standard name: "soil_moisture_content"
+    #    unformatted units: "kg m-2"
+    #    cell_methods: "time: mean area: mean where land"
+    #    positive: 
+    #    type: "real"
+    #    CMOR dimensions: ["longitude", "latitude", "time"]
+    #    CMOR variable name: "mrso"
+    #    realm: "land"
+    #    frequency:
+    #    cell_measures: "area: areacella"
+    #    flag_values:
+    #    flag_meanings:
+    mrros:
+        table: "CMIP5_Lmon"
+        priority: 1
+        long name: "Surface Runoff"
+        units: "kg m-2 s-1"
+        comment: "the total surface runoff leaving the land portion of the grid cell."
+        questions and notes: 
+        name in BMGCS: "RNOF"
+        units in BMGCS: "kg/m2/s"  # in units syntax
+        desired units: "kg/m2/s"   # in units syntax
+        output variable name: "mrros"
+        standard name: "surface_runoff_flux"
+        unformatted units: "kg m-2 s-1"
+        cell_methods: "time: mean area: mean where land"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "time"]
+        CMOR variable name: "mrros"
+        realm: "land"
+        frequency:
+        cell_measures: "area: areacella"
+        flag_values:
+        flag_meanings:

@@ -1,0 +1,507 @@
+description:
+    outpath: "/stornext/online13/ocean/simulations/CMIP"
+    experiment_id: "decadal1960"
+    institution: "INPE"
+    source: "BESM-OA2.5.1 2014 atmosphere: CPTEC (T62L28); ocean: MOM (mom4p1_pubrel_18dec2009, 0.25-2xL50); land: SSIB"
+    calendar: "julian"
+    realization: 1
+    contact: "Dr. Paulo Nobre <paulo.nobre@cptec.inpe.br>"
+    history: ""
+    comment: ""
+    references: ""
+    #leap_year:
+    #leap_month:
+    #month_lengths:
+    model_id: "BESM-OA2.5.1"
+    forcing: "GHG, Sl" 
+    initialization_method: 1
+    physics_version: 1
+    institute_id: "INPE"
+    parent_experiment_id: "N/A"
+    branch_time: 0.0
+    parent_experiment_rip: "N/A"
+
+variables:
+    difvho:
+        table: "CMIP5_Oclim"
+        priority: 3
+        long name: "Ocean Vertical Heat Diffusivity"
+        units: "m2 s-1"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "diff_cbt_t"
+        units in BMGCS: "m2/s"  # in units syntax
+        desired units: "m2/s"   # in units syntax
+        output variable name: "difvho"
+        standard name: "ocean_vertical_heat_diffusivity"
+        unformatted units: "m2 s-1"
+        cell_methods: "time: mean within years time: mean over years"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+        CMOR variable name: "difvho"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+    difvso:
+        table: "CMIP5_Oclim"
+        priority: 3
+        long name: "Ocean Vertical Salt Diffusivity "
+        units: "m2 s-1"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "diff_cbt_s"
+        units in BMGCS: "m2/s"  # in units syntax
+        desired units: "m2/s"   # in units syntax
+        output variable name: "difvso"
+        standard name: "ocean_vertical_salt_diffusivity"
+        unformatted units: "m2 s-1"
+        cell_methods: "time: mean within years time: mean over years"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+        CMOR variable name: "difvso"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+    difvtrbo:
+        table: "CMIP5_Oclim"
+        priority: 3
+        long name: "Ocean Vertical Tracer Diffusivity due to Background "
+        units: "m2 s-1"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "diff_cbt_back"
+        units in BMGCS: "m2/s"  # in units syntax
+        desired units: "m2/s"   # in units syntax
+        output variable name: "difvtrbo"
+        standard name: "ocean_vertical_tracer_diffusivity_due_to_background"
+        unformatted units: "m2 s-1"
+        cell_methods: "time: mean within years time: mean over years"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+        CMOR variable name: "difvtrbo"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+#    difvtrto:
+#        table: "CMIP5_Oclim"
+#        priority: 3
+#        long name: "Ocean Vertical Tracer Diffusivity due to Tides "
+#        units: "m2 s-1"
+#        comment: 
+#        questions and notes: 
+#        name in BMGCS: "diff_cbt_tides"
+#        units in BMGCS: "m2/s"  # in units syntax
+#        desired units: "m2/s"   # in units syntax
+#        output variable name: "difvtrto"
+#        standard name: "ocean_vertical_tracer_diffusivity_due_to_tides"
+#        unformatted units: "m2 s-1"
+#        cell_methods: "time: mean within years time: mean over years"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+#        CMOR variable name: "difvtrto"
+#        realm: "ocean"
+#        frequency:
+#        cell_measures: "area: areacello volume: volcello"
+#        flag_values:
+#        flag_meanings:
+    tnpeo:
+        table: "CMIP5_Oclim"
+        priority: 3
+        long name: "Tendency of Ocean Potential Energy Content "
+        units: "W m-2"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "power_diss"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "tnpeo"
+        standard name: "tendency_of_ocean_potential_energy_content"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean within years time: mean over years"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+        CMOR variable name: "tnpeo"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+#    tnpeot:
+#        table: "CMIP5_Oclim"
+#        priority: 3
+#        long name: "Tendency of Ocean Potential Energy Content due to Tides"
+#        units: "W m-2"
+#        comment: 
+#        questions and notes: 
+#        name in BMGCS: "power_diss_tides" 
+#        units in BMGCS: "W/m2"  # in units syntax
+#        desired units: "W/m2"   # in units syntax
+#        output variable name: "tnpeot"
+#        standard name: "tendency_of_ocean_potential_energy_content_due_to_tides"
+#        unformatted units: "W m-2"
+#        cell_methods: "time: mean within years time: mean over years"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+#        CMOR variable name: "tnpeot"
+#        realm: "ocean"
+#        frequency:
+#        cell_measures: "area: areacello volume: volcello"
+#        flag_values:
+#        flag_meanings:
+    tnpeotb:
+        table: "CMIP5_Oclim"
+        priority: 3
+        long name: "Tendency of Ocean Potential Energy Content due to Background"
+        units: "W m-2"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "power_diss_back"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "tnpeotb"
+        standard name: "tendency_of_ocean_potential_energy_content_due_to_background"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean within years time: mean over years"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+        CMOR variable name: "tnpeotb"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+    difvmo:
+        table: "CMIP5_Oclim"
+        priority: 3
+        long name: "Ocean Vertical Momentum Diffusivity"
+        units: "m2 s-1"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "visc_cbu"
+        units in BMGCS: "m2/s"  # in units syntax
+        desired units: "m2/s"   # in units syntax
+        output variable name: "difvmo"
+        standard name: "ocean_vertical_momentum_diffusivity"
+        unformatted units: "m2 s-1"
+        cell_methods: "time: mean within years time: mean over years"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+        CMOR variable name: "difvmo"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+    difvmbo:
+        table: "CMIP5_Oclim"
+        priority: 3
+        long name: "Ocean Vertical Momentum Diffusivity due to Background"
+        units: "m2 s-1"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "visc_cbu_back"
+        units in BMGCS: "m2/s"  # in units syntax
+        desired units: "m2/s"   # in units syntax
+        output variable name: "difvmbo"
+        standard name: "ocean_vertical_momentum_diffusivity_due_to_background"
+        unformatted units: "m2 s-1"
+        cell_methods: "time: mean within years time: mean over years"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+        CMOR variable name: "difvmbo"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+#    difvmto:
+#        table: "CMIP5_Oclim"
+#        priority: 3
+#        long name: "Ocean Vertical Momentum Diffusivity due to Tides"
+#        units: "m2 s-1"
+#        comment: 
+#        questions and notes: 
+#        name in BMGCS: "visc_cbu_tides"
+#        units in BMGCS: "m2/s"  # in units syntax
+#        desired units: "m2/s"   # in units syntax
+#        output variable name: "difvmto"
+#        standard name: "ocean_vertical_momentum_diffusivity_due_to_tides"
+#        unformatted units: "m2 s-1"
+#        cell_methods: "time: mean within years time: mean over years"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+#        CMOR variable name: "difvmto"
+#        realm: "ocean"
+#        frequency:
+#        cell_measures: "area: areacello volume: volcello"
+#        flag_values:
+#        flag_meanings:
+    difvmfdo:
+        table: "CMIP5_Oclim"
+        priority: 3
+        long name: "Ocean Vertical Momentum Diffusivity due to Form Drag"
+        units: "m2 s-1"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "visc_cbu_form_drag_u"
+        units in BMGCS: "m2/s"  # in units syntax
+        desired units: "m2/s"   # in units syntax
+        output variable name: "difvmfdo"
+        standard name: "ocean_vertical_momentum_diffusivity_due_to_form_drag"
+        unformatted units: "m2 s-1"
+        cell_methods: "time: mean within years time: mean over years"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+        CMOR variable name: "difvmfdo"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+    dispkevfo:
+        table: "CMIP5_Oclim"
+        priority: 3
+        long name: "Ocean Kinetic Energy Dissipation Per Unit Area due to Vertical Friction"
+        units: "W m-2"
+        comment: 
+        questions and notes: 
+        name in BMGCS: "vert_lap_diss"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "dispkevfo"
+        standard name: "ocean_kinetic_energy_dissipation_per_unit_area_due_to_vertical_friction"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean within years time: mean over years"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+        CMOR variable name: "dispkevfo"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+    diftrblo3d:
+        table: "CMIP5_Oclim"
+        priority: 3
+        long name: "Ocean Tracer Bolus Laplacian Diffusivity"
+        units: "m2 s-1"
+        comment: 
+        questions and notes: "3-d time dependent field"
+        name in BMGCS: "agm_3d"
+        units in BMGCS: "m2/s"  # in units syntax
+        desired units: "m2/s"   # in units syntax
+        output variable name: "diftrblo3d"
+        standard name: "ocean_tracer_bolus_laplacian_diffusivity"
+        unformatted units: "m2 s-1"
+        cell_methods: "time: mean within years time: mean over years"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+        CMOR variable name: "diftrblo"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+    diftrelo:
+        table: "CMIP5_Oclim"
+        priority: 3
+        long name: "Ocean Tracer Epineutral Laplacian Diffusivity "
+        units: "m2 s-1"
+        comment: 
+        questions and notes: "3-d time dependent field"
+        name in BMGCS: "aredi_3d"
+        units in BMGCS: "m2/s"  # in units syntax
+        desired units: "m2/s"   # in units syntax
+        output variable name: "diftrelo3d"
+        standard name: "ocean_tracer_epineutral_laplacian_diffusivity"
+        unformatted units: "m2 s-1"
+        cell_methods: "time: mean within years time: mean over years"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+        CMOR variable name: "diftrelo"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+#    difmxylo:
+#        table: "CMIP5_Oclim"
+#        priority: 3
+#        long name: "Ocean Momentum XY Laplacian Diffusivity"
+#        units: "m2 s-1"
+#        comment: 
+#        questions and notes: '3-d time dependent field'
+#        name in BMGCS: "aiso_lap"
+#        units in BMGCS: "m2/s"  # in units syntax
+#        desired units: "m2/s"   # in units syntax
+#        output variable name: "difmxylo"
+#        standard name: "ocean_momentum_xy_laplacian_diffusivity"
+#        unformatted units: "m2 s-1"
+#        cell_methods: "time: mean within years time: mean over years"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+#        CMOR variable name: "difmxylo"
+#        realm: "ocean"
+#        frequency:
+#        cell_measures: "area: areacello volume: volcello"
+#        flag_values:
+#        flag_meanings:
+    difmxybo:
+        table: "CMIP5_Oclim"
+        priority: 3
+        long name: "Ocean Momentum XY Biharmonic Diffusivity"
+        units: "m4 s-1"
+        comment: 
+        questions and notes: '3-d time dependent field'
+        name in BMGCS: "aiso_bih"
+        units in BMGCS: "m4/s"  # in units syntax
+        desired units: "m4/s"   # in units syntax
+        output variable name: "difmxybo"
+        standard name: "ocean_momentum_xy_biharmonic_diffusivity"
+        unformatted units: "m4 s-1"
+        cell_methods: "time: mean within years time: mean over years"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+        CMOR variable name: "difmxybo"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+#    diftrblo2d:
+#        table: "CMIP5_Oclim"
+#        priority: 3
+#        long name: "Ocean Tracer Bolus Laplacian Diffusivity "
+#        units: "m2 s-1"
+#        comment: 
+#        questions and notes: '2-d time dependent field'
+#        name in BMGCS: "agm"
+#        units in BMGCS: "m2/s"  # in units syntax
+#        desired units: "m2/s"   # in units syntax
+#        output variable name: "diftrblo2d"
+#        standard name: "ocean_tracer_bolus_laplacian_diffusivity"
+#        unformatted units: "m2 s-1"
+#        cell_methods: "time: mean within years time: mean over years"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "time2"]
+#        CMOR variable name: "diftrblo2d"
+#        realm: "ocean"
+#        frequency:
+#        cell_measures: "area: areacello volume: volcello"
+#        flag_values:
+#        flag_meanings:
+#    diftrelo2d:
+#        table: "CMIP5_Oclim"
+#        priority: 3
+#        long name: "Ocean Tracer Epineutral Laplacian Diffusivity "
+#        units: "m2 s-1"
+#        comment: 
+#        questions and notes: '2-d time dependent field' 
+#        name in BMGCS: "aredi"
+#        units in BMGCS: "m2/s"  # in units syntax
+#        desired units: "m2/s"   # in units syntax
+#        output variable name: "diftrelo2d"
+#        standard name: "ocean_tracer_epineutral_laplacian_diffusivity"
+#        unformatted units: "m2 s-1"
+#        cell_methods: "time: mean within years time: mean over years"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "time2"]
+#        CMOR variable name: "diftrelo2d"
+#        realm: "ocean"
+#        frequency:
+#        cell_measures: "area: areacello volume: volcello"
+#        flag_values:
+#        flag_meanings:
+    tnkebto:
+        table: "CMIP5_Oclim"
+        priority: 3
+        long name: "Tendency of Ocean Eddy Kinetic Energy Content due to Bolus Transport"
+        units: "W m-2"
+        comment: 
+        questions and notes: '3-d time dependent field'
+        name in BMGCS: "gm_eddy_ke_source"
+        units in BMGCS: "W/m2"  # in units syntax
+        desired units: "W/m2"   # in units syntax
+        output variable name: "tnkebto"
+        standard name: "tendency_of_ocean_eddy_kinetic_energy_content_due_to_bolus_transport"
+        unformatted units: "W m-2"
+        cell_methods: "time: mean within years time: mean over years"
+        positive: 
+        type: "real"
+        CMOR dimensions: ["longitude", "latitude", "olevel", "time2"]
+        CMOR variable name: "tnkebto"
+        realm: "ocean"
+        frequency:
+        cell_measures: "area: areacello volume: volcello"
+        flag_values:
+        flag_meanings:
+#    difmxylo:
+#        table: "CMIP5_Oclim"
+#        priority: 3
+#        long name: "Ocean Momentum XY Laplacian Diffusivity"
+#        units: "m2 s-1"
+#        comment: 
+#        questions and notes: '2-d time dependent field'
+#        name in BMGCS: "lap_visc"
+#        units in BMGCS: "m2/s"  # in units syntax
+#        desired units: "m2/s"   # in units syntax
+#        output variable name: "difmxylo"
+#        standard name: "ocean_momentum_xy_laplacian_diffusivity"
+#        unformatted units: "m2 s-1"
+#        cell_methods: "time: mean within years time: mean over years"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "time2"]
+#        CMOR variable name: "difmxylo"
+#        realm: "ocean"
+#        frequency:
+#        cell_measures: "area: areacello volume: volcello"
+#        flag_values:
+#        flag_meanings:
+#    difmxybo:
+#        table: "CMIP5_Oclim"
+#        priority: 3
+#        long name: "Ocean Momentum XY Biharmonic Diffusivity"
+#        units: "m4 s-1"
+#        comment: 
+#        questions and notes: '2-d time dependent field'
+#        name in BMGCS: "cst/gen"
+#        units in BMGCS: ""  # in units syntax
+#        desired units: ""   # in units syntax
+#        output variable name: "difmxybo"
+#        standard name: "ocean_momentum_xy_biharmonic_diffusivity"
+#        unformatted units: "m4 s-1"
+#        cell_methods: "time: mean within years time: mean over years"
+#        positive: 
+#        type: "real"
+#        CMOR dimensions: ["longitude", "latitude", "time2"]
+#        CMOR variable name: "difmxybo2d"
+#        realm: "ocean"
+#        frequency:
+#        cell_measures: "area: areacello volume: volcello"
+#        flag_values:
+#        flag_meanings:

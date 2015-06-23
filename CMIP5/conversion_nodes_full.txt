@@ -1,0 +1,426 @@
+decadal1960 r10i1p1 atmos 360 360.0 1.0 
+decadal1960 r10i1p1 land 360 360.0 1.0 
+decadal1960 r10i1p1 ocean 360 360.0 1.0 
+decadal1960 r1i1p1 atmos 1199 1200.0 0.999166666667 
+	 60r1i1p1a 206012 
+decadal1960 r1i1p1 land 1199 1200.0 0.999166666667 
+	 60r1i1p1l 206012 
+decadal1960 r1i1p1 ocean 1198 1200.0 0.998333333333 
+	 60r1i1p1o 206003 
+	 60r1i1p1o 206012 
+decadal1960 r1i1p2 atmos 360 360.0 1.0 
+decadal1960 r1i1p2 land 360 360.0 1.0 
+decadal1960 r1i1p2 ocean 359 360.0 0.997222222222 
+	 60r1i1p2o 197903 
+decadal1960 r2i1p1 atmos 360 360.0 1.0 
+decadal1960 r2i1p1 land 360 360.0 1.0 
+decadal1960 r2i1p1 ocean 360 360.0 1.0 
+decadal1960 r3i1p1 atmos 360 360.0 1.0 
+decadal1960 r3i1p1 land 360 360.0 1.0 
+decadal1960 r3i1p1 ocean 360 360.0 1.0 
+decadal1960 r4i1p1 atmos 360 360.0 1.0 
+decadal1960 r4i1p1 land 360 360.0 1.0 
+decadal1960 r4i1p1 ocean 360 360.0 1.0 
+decadal1960 r5i1p1 atmos 360 360.0 1.0 
+decadal1960 r5i1p1 land 360 360.0 1.0 
+decadal1960 r5i1p1 ocean 360 360.0 1.0 
+decadal1960 r6i1p1 atmos 360 360.0 1.0 
+decadal1960 r6i1p1 land 360 360.0 1.0 
+decadal1960 r6i1p1 ocean 360 360.0 1.0 
+decadal1960 r7i1p1 atmos 360 360.0 1.0 
+decadal1960 r7i1p1 land 360 360.0 1.0 
+decadal1960 r7i1p1 ocean 360 360.0 1.0 
+decadal1960 r8i1p1 atmos 360 360.0 1.0 
+decadal1960 r8i1p1 land 360 360.0 1.0 
+decadal1960 r8i1p1 ocean 360 360.0 1.0 
+decadal1960 r9i1p1 atmos 360 360.0 1.0 
+decadal1960 r9i1p1 land 360 360.0 1.0 
+decadal1960 r9i1p1 ocean 360 360.0 1.0 
+decadal1980 r10i1p1 atmos 360 360.0 1.0 
+decadal1980 r10i1p1 land 360 360.0 1.0 
+decadal1980 r10i1p1 ocean 360 360.0 1.0 
+decadal1980 r1i1p1 atmos 1197 1200.0 0.9975 
+	 80r1i1p1a 205712 
+	 80r1i1p1a 205801 
+	 80r1i1p1a 208012 
+decadal1980 r1i1p1 land 1197 1200.0 0.9975 
+	 80r1i1p1l 205712 
+	 80r1i1p1l 205801 
+	 80r1i1p1l 208012 
+decadal1980 r1i1p1 ocean 1199 1200.0 0.999166666667 
+	 80r1i1p1o 208012 
+decadal1980 r1i1p2 atmos 360 360.0 1.0 
+decadal1980 r1i1p2 land 360 360.0 1.0 
+decadal1980 r1i1p2 ocean 360 360.0 1.0 
+decadal1980 r2i1p1 atmos 360 360.0 1.0 
+decadal1980 r2i1p1 land 360 360.0 1.0 
+decadal1980 r2i1p1 ocean 360 360.0 1.0 
+decadal1980 r3i1p1 atmos 360 360.0 1.0 
+decadal1980 r3i1p1 land 360 360.0 1.0 
+decadal1980 r3i1p1 ocean 360 360.0 1.0 
+decadal1980 r4i1p1 atmos 360 360.0 1.0 
+decadal1980 r4i1p1 land 360 360.0 1.0 
+decadal1980 r4i1p1 ocean 360 360.0 1.0 
+decadal1980 r5i1p1 atmos 360 360.0 1.0 
+decadal1980 r5i1p1 land 360 360.0 1.0 
+decadal1980 r5i1p1 ocean 360 360.0 1.0 
+decadal1980 r6i1p1 atmos 360 360.0 1.0 
+decadal1980 r6i1p1 land 360 360.0 1.0 
+decadal1980 r6i1p1 ocean 360 360.0 1.0 
+decadal1980 r7i1p1 atmos 360 360.0 1.0 
+decadal1980 r7i1p1 land 360 360.0 1.0 
+decadal1980 r7i1p1 ocean 360 360.0 1.0 
+decadal1980 r8i1p1 atmos 360 360.0 1.0 
+decadal1980 r8i1p1 land 360 360.0 1.0 
+decadal1980 r8i1p1 ocean 360 360.0 1.0 
+decadal1980 r9i1p1 atmos 360 360.0 1.0 
+decadal1980 r9i1p1 land 360 360.0 1.0 
+decadal1980 r9i1p1 ocean 360 360.0 1.0 
+decadal2005 r10i1p1 atmos 360 360.0 1.0 
+decadal2005 r10i1p1 land 360 360.0 1.0 
+decadal2005 r10i1p1 ocean 360 360.0 1.0 
+decadal2005 r1i1p1 atmos 1188 1200.0 0.99 
+	 05r1i1p1a 210002 
+	 05r1i1p1a 210003 
+	 05r1i1p1a 210004 
+	 05r1i1p1a 210005 
+	 05r1i1p1a 210006 
+	 05r1i1p1a 210007 
+	 05r1i1p1a 210008 
+	 05r1i1p1a 210009 
+	 05r1i1p1a 210010 
+	 05r1i1p1a 210011 
+	 05r1i1p1a 210012 
+	 05r1i1p1a 210512 
+decadal2005 r1i1p1 land 1188 1200.0 0.99 
+	 05r1i1p1l 210002 
+	 05r1i1p1l 210003 
+	 05r1i1p1l 210004 
+	 05r1i1p1l 210005 
+	 05r1i1p1l 210006 
+	 05r1i1p1l 210007 
+	 05r1i1p1l 210008 
+	 05r1i1p1l 210009 
+	 05r1i1p1l 210010 
+	 05r1i1p1l 210011 
+	 05r1i1p1l 210012 
+	 05r1i1p1l 210512 
+decadal2005 r1i1p1 ocean 1140 1200.0 0.95 
+	 05r1i1p1o 210101 
+	 05r1i1p1o 210102 
+	 05r1i1p1o 210103 
+	 05r1i1p1o 210104 
+	 05r1i1p1o 210105 
+	 05r1i1p1o 210106 
+	 05r1i1p1o 210107 
+	 05r1i1p1o 210108 
+	 05r1i1p1o 210109 
+	 05r1i1p1o 210110 
+	 05r1i1p1o 210111 
+	 05r1i1p1o 210112 
+	 05r1i1p1o 210201 
+	 05r1i1p1o 210202 
+	 05r1i1p1o 210203 
+	 05r1i1p1o 210204 
+	 05r1i1p1o 210205 
+	 05r1i1p1o 210206 
+	 05r1i1p1o 210207 
+	 05r1i1p1o 210208 
+	 05r1i1p1o 210209 
+	 05r1i1p1o 210210 
+	 05r1i1p1o 210211 
+	 05r1i1p1o 210212 
+	 05r1i1p1o 210301 
+	 05r1i1p1o 210302 
+	 05r1i1p1o 210303 
+	 05r1i1p1o 210304 
+	 05r1i1p1o 210305 
+	 05r1i1p1o 210306 
+	 05r1i1p1o 210307 
+	 05r1i1p1o 210308 
+	 05r1i1p1o 210309 
+	 05r1i1p1o 210310 
+	 05r1i1p1o 210311 
+	 05r1i1p1o 210312 
+	 05r1i1p1o 210401 
+	 05r1i1p1o 210402 
+	 05r1i1p1o 210403 
+	 05r1i1p1o 210404 
+	 05r1i1p1o 210405 
+	 05r1i1p1o 210406 
+	 05r1i1p1o 210407 
+	 05r1i1p1o 210408 
+	 05r1i1p1o 210409 
+	 05r1i1p1o 210410 
+	 05r1i1p1o 210411 
+	 05r1i1p1o 210412 
+	 05r1i1p1o 210501 
+	 05r1i1p1o 210502 
+	 05r1i1p1o 210503 
+	 05r1i1p1o 210504 
+	 05r1i1p1o 210505 
+	 05r1i1p1o 210506 
+	 05r1i1p1o 210507 
+	 05r1i1p1o 210508 
+	 05r1i1p1o 210509 
+	 05r1i1p1o 210510 
+	 05r1i1p1o 210511 
+	 05r1i1p1o 210512 
+decadal2005 r1i1p2 atmos 360 360.0 1.0 
+decadal2005 r1i1p2 land 360 360.0 1.0 
+decadal2005 r1i1p2 ocean 360 360.0 1.0 
+decadal2005 r2i1p1 atmos 360 360.0 1.0 
+decadal2005 r2i1p1 land 360 360.0 1.0 
+decadal2005 r2i1p1 ocean 360 360.0 1.0 
+decadal2005 r3i1p1 atmos 360 360.0 1.0 
+decadal2005 r3i1p1 land 360 360.0 1.0 
+decadal2005 r3i1p1 ocean 360 360.0 1.0 
+decadal2005 r4i1p1 atmos 360 360.0 1.0 
+decadal2005 r4i1p1 land 360 360.0 1.0 
+decadal2005 r4i1p1 ocean 360 360.0 1.0 
+decadal2005 r5i1p1 atmos 360 360.0 1.0 
+decadal2005 r5i1p1 land 360 360.0 1.0 
+decadal2005 r5i1p1 ocean 360 360.0 1.0 
+decadal2005 r6i1p1 atmos 360 360.0 1.0 
+decadal2005 r6i1p1 land 360 360.0 1.0 
+decadal2005 r6i1p1 ocean 360 360.0 1.0 
+decadal2005 r7i1p1 atmos 360 360.0 1.0 
+decadal2005 r7i1p1 land 360 360.0 1.0 
+decadal2005 r7i1p1 ocean 360 360.0 1.0 
+decadal2005 r8i1p1 atmos 360 360.0 1.0 
+decadal2005 r8i1p1 land 360 360.0 1.0 
+decadal2005 r8i1p1 ocean 360 360.0 1.0 
+decadal2005 r9i1p1 atmos 360 360.0 1.0 
+decadal2005 r9i1p1 land 360 360.0 1.0 
+decadal2005 r9i1p1 ocean 360 360.0 1.0 
+decadal1965 r10i1p1 atmos 120 120.0 1.0 
+decadal1965 r10i1p1 land 120 120.0 1.0 
+decadal1965 r10i1p1 ocean 120 120.0 1.0 
+decadal1965 r1i1p1 atmos 120 120.0 1.0 
+decadal1965 r1i1p1 land 120 120.0 1.0 
+decadal1965 r1i1p1 ocean 120 120.0 1.0 
+decadal1965 r1i1p2 atmos 120 120.0 1.0 
+decadal1965 r1i1p2 land 120 120.0 1.0 
+decadal1965 r1i1p2 ocean 120 120.0 1.0 
+decadal1965 r2i1p1 atmos 120 120.0 1.0 
+decadal1965 r2i1p1 land 120 120.0 1.0 
+decadal1965 r2i1p1 ocean 120 120.0 1.0 
+decadal1965 r3i1p1 atmos 120 120.0 1.0 
+decadal1965 r3i1p1 land 120 120.0 1.0 
+decadal1965 r3i1p1 ocean 120 120.0 1.0 
+decadal1965 r4i1p1 atmos 120 120.0 1.0 
+decadal1965 r4i1p1 land 120 120.0 1.0 
+decadal1965 r4i1p1 ocean 120 120.0 1.0 
+decadal1965 r5i1p1 atmos 120 120.0 1.0 
+decadal1965 r5i1p1 land 120 120.0 1.0 
+decadal1965 r5i1p1 ocean 120 120.0 1.0 
+decadal1965 r6i1p1 atmos 120 120.0 1.0 
+decadal1965 r6i1p1 land 120 120.0 1.0 
+decadal1965 r6i1p1 ocean 120 120.0 1.0 
+decadal1965 r7i1p1 atmos 120 120.0 1.0 
+decadal1965 r7i1p1 land 120 120.0 1.0 
+decadal1965 r7i1p1 ocean 120 120.0 1.0 
+decadal1965 r8i1p1 atmos 120 120.0 1.0 
+decadal1965 r8i1p1 land 120 120.0 1.0 
+decadal1965 r8i1p1 ocean 120 120.0 1.0 
+decadal1965 r9i1p1 atmos 120 120.0 1.0 
+decadal1965 r9i1p1 land 120 120.0 1.0 
+decadal1965 r9i1p1 ocean 120 120.0 1.0 
+decadal1970 r10i1p1 atmos 120 120.0 1.0 
+decadal1970 r10i1p1 land 120 120.0 1.0 
+decadal1970 r10i1p1 ocean 120 120.0 1.0 
+decadal1970 r1i1p1 atmos 120 120.0 1.0 
+decadal1970 r1i1p1 land 120 120.0 1.0 
+decadal1970 r1i1p1 ocean 120 120.0 1.0 
+decadal1970 r1i1p2 atmos 120 120.0 1.0 
+decadal1970 r1i1p2 land 120 120.0 1.0 
+decadal1970 r1i1p2 ocean 120 120.0 1.0 
+decadal1970 r2i1p1 atmos 120 120.0 1.0 
+decadal1970 r2i1p1 land 120 120.0 1.0 
+decadal1970 r2i1p1 ocean 120 120.0 1.0 
+decadal1970 r3i1p1 atmos 120 120.0 1.0 
+decadal1970 r3i1p1 land 120 120.0 1.0 
+decadal1970 r3i1p1 ocean 120 120.0 1.0 
+decadal1970 r4i1p1 atmos 120 120.0 1.0 
+decadal1970 r4i1p1 land 120 120.0 1.0 
+decadal1970 r4i1p1 ocean 120 120.0 1.0 
+decadal1970 r5i1p1 atmos 120 120.0 1.0 
+decadal1970 r5i1p1 land 120 120.0 1.0 
+decadal1970 r5i1p1 ocean 120 120.0 1.0 
+decadal1970 r6i1p1 atmos 120 120.0 1.0 
+decadal1970 r6i1p1 land 120 120.0 1.0 
+decadal1970 r6i1p1 ocean 120 120.0 1.0 
+decadal1970 r7i1p1 atmos 120 120.0 1.0 
+decadal1970 r7i1p1 land 120 120.0 1.0 
+decadal1970 r7i1p1 ocean 120 120.0 1.0 
+decadal1970 r8i1p1 atmos 120 120.0 1.0 
+decadal1970 r8i1p1 land 120 120.0 1.0 
+decadal1970 r8i1p1 ocean 120 120.0 1.0 
+decadal1970 r9i1p1 atmos 120 120.0 1.0 
+decadal1970 r9i1p1 land 120 120.0 1.0 
+decadal1970 r9i1p1 ocean 120 120.0 1.0 
+decadal1975 r10i1p1 atmos 120 120.0 1.0 
+decadal1975 r10i1p1 land 120 120.0 1.0 
+decadal1975 r10i1p1 ocean 120 120.0 1.0 
+decadal1975 r1i1p1 atmos 120 120.0 1.0 
+decadal1975 r1i1p1 land 120 120.0 1.0 
+decadal1975 r1i1p1 ocean 120 120.0 1.0 
+decadal1975 r1i1p2 atmos 120 120.0 1.0 
+decadal1975 r1i1p2 land 120 120.0 1.0 
+decadal1975 r1i1p2 ocean 120 120.0 1.0 
+decadal1975 r2i1p1 atmos 120 120.0 1.0 
+decadal1975 r2i1p1 land 120 120.0 1.0 
+decadal1975 r2i1p1 ocean 120 120.0 1.0 
+decadal1975 r3i1p1 atmos 120 120.0 1.0 
+decadal1975 r3i1p1 land 120 120.0 1.0 
+decadal1975 r3i1p1 ocean 120 120.0 1.0 
+decadal1975 r4i1p1 atmos 120 120.0 1.0 
+decadal1975 r4i1p1 land 120 120.0 1.0 
+decadal1975 r4i1p1 ocean 120 120.0 1.0 
+decadal1975 r5i1p1 atmos 120 120.0 1.0 
+decadal1975 r5i1p1 land 120 120.0 1.0 
+decadal1975 r5i1p1 ocean 120 120.0 1.0 
+decadal1975 r6i1p1 atmos 120 120.0 1.0 
+decadal1975 r6i1p1 land 120 120.0 1.0 
+decadal1975 r6i1p1 ocean 120 120.0 1.0 
+decadal1975 r7i1p1 atmos 120 120.0 1.0 
+decadal1975 r7i1p1 land 120 120.0 1.0 
+decadal1975 r7i1p1 ocean 120 120.0 1.0 
+decadal1975 r8i1p1 atmos 120 120.0 1.0 
+decadal1975 r8i1p1 land 120 120.0 1.0 
+decadal1975 r8i1p1 ocean 120 120.0 1.0 
+decadal1975 r9i1p1 atmos 120 120.0 1.0 
+decadal1975 r9i1p1 land 120 120.0 1.0 
+decadal1975 r9i1p1 ocean 120 120.0 1.0 
+decadal1985 r10i1p1 atmos 120 120.0 1.0 
+decadal1985 r10i1p1 land 120 120.0 1.0 
+decadal1985 r10i1p1 ocean 120 120.0 1.0 
+decadal1985 r1i1p1 atmos 120 120.0 1.0 
+decadal1985 r1i1p1 land 120 120.0 1.0 
+decadal1985 r1i1p1 ocean 120 120.0 1.0 
+decadal1985 r1i1p2 atmos 120 120.0 1.0 
+decadal1985 r1i1p2 land 120 120.0 1.0 
+decadal1985 r1i1p2 ocean 120 120.0 1.0 
+decadal1985 r2i1p1 atmos 120 120.0 1.0 
+decadal1985 r2i1p1 land 120 120.0 1.0 
+decadal1985 r2i1p1 ocean 120 120.0 1.0 
+decadal1985 r3i1p1 atmos 120 120.0 1.0 
+decadal1985 r3i1p1 land 120 120.0 1.0 
+decadal1985 r3i1p1 ocean 120 120.0 1.0 
+decadal1985 r4i1p1 atmos 120 120.0 1.0 
+decadal1985 r4i1p1 land 120 120.0 1.0 
+decadal1985 r4i1p1 ocean 120 120.0 1.0 
+decadal1985 r5i1p1 atmos 120 120.0 1.0 
+decadal1985 r5i1p1 land 120 120.0 1.0 
+decadal1985 r5i1p1 ocean 120 120.0 1.0 
+decadal1985 r6i1p1 atmos 120 120.0 1.0 
+decadal1985 r6i1p1 land 120 120.0 1.0 
+decadal1985 r6i1p1 ocean 120 120.0 1.0 
+decadal1985 r7i1p1 atmos 120 120.0 1.0 
+decadal1985 r7i1p1 land 120 120.0 1.0 
+decadal1985 r7i1p1 ocean 120 120.0 1.0 
+decadal1985 r8i1p1 atmos 120 120.0 1.0 
+decadal1985 r8i1p1 land 120 120.0 1.0 
+decadal1985 r8i1p1 ocean 120 120.0 1.0 
+decadal1985 r9i1p1 atmos 120 120.0 1.0 
+decadal1985 r9i1p1 land 120 120.0 1.0 
+decadal1985 r9i1p1 ocean 120 120.0 1.0 
+decadal1990 r10i1p1 atmos 120 120.0 1.0 
+decadal1990 r10i1p1 land 120 120.0 1.0 
+decadal1990 r10i1p1 ocean 120 120.0 1.0 
+decadal1990 r1i1p1 atmos 120 120.0 1.0 
+decadal1990 r1i1p1 land 120 120.0 1.0 
+decadal1990 r1i1p1 ocean 120 120.0 1.0 
+decadal1990 r1i1p2 atmos 120 120.0 1.0 
+decadal1990 r1i1p2 land 120 120.0 1.0 
+decadal1990 r1i1p2 ocean 120 120.0 1.0 
+decadal1990 r2i1p1 atmos 120 120.0 1.0 
+decadal1990 r2i1p1 land 120 120.0 1.0 
+decadal1990 r2i1p1 ocean 120 120.0 1.0 
+decadal1990 r3i1p1 atmos 120 120.0 1.0 
+decadal1990 r3i1p1 land 120 120.0 1.0 
+decadal1990 r3i1p1 ocean 120 120.0 1.0 
+decadal1990 r4i1p1 atmos 120 120.0 1.0 
+decadal1990 r4i1p1 land 120 120.0 1.0 
+decadal1990 r4i1p1 ocean 120 120.0 1.0 
+decadal1990 r5i1p1 atmos 120 120.0 1.0 
+decadal1990 r5i1p1 land 120 120.0 1.0 
+decadal1990 r5i1p1 ocean 120 120.0 1.0 
+decadal1990 r6i1p1 atmos 120 120.0 1.0 
+decadal1990 r6i1p1 land 120 120.0 1.0 
+decadal1990 r6i1p1 ocean 120 120.0 1.0 
+decadal1990 r7i1p1 atmos 120 120.0 1.0 
+decadal1990 r7i1p1 land 120 120.0 1.0 
+decadal1990 r7i1p1 ocean 120 120.0 1.0 
+decadal1990 r8i1p1 atmos 120 120.0 1.0 
+decadal1990 r8i1p1 land 120 120.0 1.0 
+decadal1990 r8i1p1 ocean 120 120.0 1.0 
+decadal1990 r9i1p1 atmos 120 120.0 1.0 
+decadal1990 r9i1p1 land 120 120.0 1.0 
+decadal1990 r9i1p1 ocean 120 120.0 1.0 
+decadal1995 r10i1p1 atmos 120 120.0 1.0 
+decadal1995 r10i1p1 land 120 120.0 1.0 
+decadal1995 r10i1p1 ocean 120 120.0 1.0 
+decadal1995 r1i1p1 atmos 120 120.0 1.0 
+decadal1995 r1i1p1 land 120 120.0 1.0 
+decadal1995 r1i1p1 ocean 120 120.0 1.0 
+decadal1995 r2i1p1 atmos 120 120.0 1.0 
+decadal1995 r2i1p1 land 120 120.0 1.0 
+decadal1995 r2i1p1 ocean 120 120.0 1.0 
+decadal1995 r2i1p2 atmos 120 120.0 1.0 
+decadal1995 r2i1p2 land 120 120.0 1.0 
+decadal1995 r2i1p2 ocean 120 120.0 1.0 
+decadal1995 r3i1p1 atmos 120 120.0 1.0 
+decadal1995 r3i1p1 land 120 120.0 1.0 
+decadal1995 r3i1p1 ocean 120 120.0 1.0 
+decadal1995 r4i1p1 atmos 120 120.0 1.0 
+decadal1995 r4i1p1 land 120 120.0 1.0 
+decadal1995 r4i1p1 ocean 120 120.0 1.0 
+decadal1995 r5i1p1 atmos 120 120.0 1.0 
+decadal1995 r5i1p1 land 120 120.0 1.0 
+decadal1995 r5i1p1 ocean 120 120.0 1.0 
+decadal1995 r6i1p1 atmos 120 120.0 1.0 
+decadal1995 r6i1p1 land 120 120.0 1.0 
+decadal1995 r6i1p1 ocean 120 120.0 1.0 
+decadal1995 r7i1p1 atmos 120 120.0 1.0 
+decadal1995 r7i1p1 land 120 120.0 1.0 
+decadal1995 r7i1p1 ocean 120 120.0 1.0 
+decadal1995 r8i1p1 atmos 120 120.0 1.0 
+decadal1995 r8i1p1 land 120 120.0 1.0 
+decadal1995 r8i1p1 ocean 120 120.0 1.0 
+decadal1995 r9i1p1 atmos 120 120.0 1.0 
+decadal1995 r9i1p1 land 120 120.0 1.0 
+decadal1995 r9i1p1 ocean 120 120.0 1.0 
+decadal2000 r10i1p1 atmos 120 120.0 1.0 
+decadal2000 r10i1p1 land 120 120.0 1.0 
+decadal2000 r10i1p1 ocean 120 120.0 1.0 
+decadal2000 r1i1p1 atmos 120 120.0 1.0 
+decadal2000 r1i1p1 land 120 120.0 1.0 
+decadal2000 r1i1p1 ocean 120 120.0 1.0 
+decadal2000 r1i1p2 atmos 120 120.0 1.0 
+decadal2000 r1i1p2 land 120 120.0 1.0 
+decadal2000 r1i1p2 ocean 120 120.0 1.0 
+decadal2000 r2i1p1 atmos 120 120.0 1.0 
+decadal2000 r2i1p1 land 120 120.0 1.0 
+decadal2000 r2i1p1 ocean 120 120.0 1.0 
+decadal2000 r3i1p1 atmos 120 120.0 1.0 
+decadal2000 r3i1p1 land 120 120.0 1.0 
+decadal2000 r3i1p1 ocean 120 120.0 1.0 
+decadal2000 r4i1p1 atmos 120 120.0 1.0 
+decadal2000 r4i1p1 land 120 120.0 1.0 
+decadal2000 r4i1p1 ocean 120 120.0 1.0 
+decadal2000 r5i1p1 atmos 120 120.0 1.0 
+decadal2000 r5i1p1 land 120 120.0 1.0 
+decadal2000 r5i1p1 ocean 120 120.0 1.0 
+decadal2000 r6i1p1 atmos 120 120.0 1.0 
+decadal2000 r6i1p1 land 120 120.0 1.0 
+decadal2000 r6i1p1 ocean 120 120.0 1.0 
+decadal2000 r7i1p1 atmos 120 120.0 1.0 
+decadal2000 r7i1p1 land 120 120.0 1.0 
+decadal2000 r7i1p1 ocean 120 120.0 1.0 
+decadal2000 r8i1p1 atmos 120 120.0 1.0 
+decadal2000 r8i1p1 land 120 120.0 1.0 
+decadal2000 r8i1p1 ocean 120 120.0 1.0 
+decadal2000 r9i1p1 atmos 120 120.0 1.0 
+decadal2000 r9i1p1 land 120 120.0 1.0 
+decadal2000 r9i1p1 ocean 120 120.0 1.0 
