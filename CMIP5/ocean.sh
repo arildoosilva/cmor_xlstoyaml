@@ -1,3 +1,5 @@
+# Author: Beto
+
 LD_LIBRARY_PATH=/stornext/online2/ocean/software/uuid-1.6.2/lib:/stornext/online2/ocean/software/udunits-2.1.24/lib
 PYTHON=/stornext/online2/ocean/software/Envs/science/bin/python
 SCRIPT=/stornext/online2/ocean/software/CMIP5
