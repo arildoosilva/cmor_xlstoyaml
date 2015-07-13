@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-import yaml
 import sys
 import getopt
 import os
 import fileCheck
 import getVariables
+import createYaml
 from openpyxl import Workbook
 
 # vars
 inpath = None
 outpath = None
-table_prefix = 'CMIP5_'
+table_prefix = 'CMIP5_'  # change this when using CMIP6 tables
 tables = []
 wb = Workbook()
 
@@ -22,19 +22,19 @@ def getArgs(argv):
     global inpath
     global outpath
 
-    help = ('This script will generate XLS files from CMOR tables\n'
+    help_text = ('This script will generate XLS files from CMOR tables\n'
             'Modules used: openpyxl, pyyaml, sys, getopt, os')
 
     # prints the help text when -h or --help is used
     try:
         opts, args = getopt.getopt(argv, 'h', ['help'])
     except get.GetoptError:
-        print(help)
+        print(help_text)
         sys.exit(2)
 
     for opt, arg in opts:
         if opt in ('-h', '--help'):
-            print(help)
+            print(help_text)
             sys.exit()
 
     if len(sys.argv) < 3:
@@ -86,6 +86,15 @@ def writeDescription(inpath, outpath, tables):
 # main
 if __name__ == "__main__":
     getArgs(sys.argv[0:])
-    readIn(inpath)
-    writeDescription(inpath, outpath, tables)
-    getVariables.readTables(inpath, outpath, tables)
+    try:
+        readIn(inpath)
+        writeDescription(inpath, outpath, tables)
+        getVariables.readTables(inpath, outpath, tables)
+    except:
+        e = sys.exc_info()[0]
+        print(e)
+        sys.exit(2)
+    answer = raw_input("Do you want to generate the tables now? [yes/no] ")
+    if "yes" in answer:
+        createYaml.main(outpath)
+        createYaml.clearOut()  # deletes all xlsx files, leaving only yaml files

@@ -2,7 +2,6 @@
 import re
 import sys
 import formatValues
-from openpyxl import Workbook
 from openpyxl import load_workbook
 
 # vars
@@ -11,16 +10,15 @@ outpath = None
 xlstable = None
 wb = None
 activetable = None
-ignoredvars = ["eta", "depth", "sigma", "sigma_bnds", "zlev", "zlev_bnds", 
-            "depth_c", "a", "b", "nsigma", "z1", "z2", "href", "k_c"]
-            # ignores vertical coordinate formula_terms
+ignoredvars = ["eta", "depth", "sigma", "sigma_bnds", "zlev", "zlev_bnds",
+               "depth_c", "a", "b", "nsigma", "z1", "z2", "href", "k_c"]
+# ignores vertical coordinate formula_terms
 
 
 def makeXLS(variable_entry, var_name):
     """ Creates a sheet for the variable it receives
     """
     variable_holder = []  # holds the list after the regex is applied
-    variable = ""  # current variable
     variable_entry = variable_entry.split('\n')
     variable_entry = [x for x in variable_entry if not x.startswith(('!', ':'))]
     row = 2  # start on the second row of the sheet
@@ -39,8 +37,8 @@ def makeXLS(variable_entry, var_name):
     print("Adding variable: " + var_name)
     variable_sheet = wb.create_sheet(title=var_name)
 
-    variable_sheet.cell(row=row-1, column=1).value = "table"
-    variable_sheet.cell(row=row-1, column=2).value = '"{}"'.format(activetable)
+    variable_sheet.cell(row=row - 1, column=1).value = "table"
+    variable_sheet.cell(row=row - 1, column=2).value = '"{}"'.format(activetable)
 
     for line in variable_holder:
         line = line.replace(" - ", " = ", 1)
@@ -52,7 +50,7 @@ def makeXLS(variable_entry, var_name):
             sys.exit(2)
 
         # Formats the key and value for proper yaml writing later
-        newkey, newvalue = formatValues.format(key, value)
+        newkey, newvalue = formatValues.formatValues(key, value)
 
         variable_sheet.cell(row=row, column=1).value = newkey
         variable_sheet.cell(row=row, column=2).value = newvalue
@@ -71,23 +69,24 @@ def makeXLS(variable_entry, var_name):
         if var_name == line.split(", ")[0]:
             variable_sheet.cell(row=row, column=1).value = "name in BMGCS"
             variable_sheet.cell(row=row, column=2).value = '"{}"'.format(line.split(", ")[1])
-            variable_sheet.cell(row=row+1, column=1).value = "units in BMGCS"
-            variable_sheet.cell(row=row+1, column=2).value = '"{}"'.format(line.split(", ")[2])
+            variable_sheet.cell(row=row + 1, column=1).value = "units in BMGCS"
+            variable_sheet.cell(row=row + 1, column=2).value = \
+                '"{}"'.format(line.split(", ")[2]).replace('\n', ' ').replace('\r', '').replace(' ', '')
             break
 
     # Writes some secondary rows
-    variable_sheet.cell(row=row+2, column=1).value = "priority"
-    variable_sheet.cell(row=row+2, column=2).value = 1
-    variable_sheet.cell(row=row+3, column=1).value = "questions and notes"
-    variable_sheet.cell(row=row+3, column=2).value = ""
-    variable_sheet.cell(row=row+4, column=1).value = "positive"
-    variable_sheet.cell(row=row+4, column=2).value = ""
-    variable_sheet.cell(row=row+5, column=1).value = "frequency"
-    variable_sheet.cell(row=row+5, column=2).value = ""
-    variable_sheet.cell(row=row+6, column=1).value = "flag_values"
-    variable_sheet.cell(row=row+6, column=2).value = ""
-    variable_sheet.cell(row=row+7, column=1).value = "flag_meanings"
-    variable_sheet.cell(row=row+7, column=2).value = ""
+    variable_sheet.cell(row=row + 2, column=1).value = "priority"
+    variable_sheet.cell(row=row + 2, column=2).value = 1
+    variable_sheet.cell(row=row + 3, column=1).value = "questions and notes"
+    variable_sheet.cell(row=row + 3, column=2).value = ""
+    variable_sheet.cell(row=row + 4, column=1).value = "positive"
+    variable_sheet.cell(row=row + 4, column=2).value = ""
+    variable_sheet.cell(row=row + 5, column=1).value = "frequency"
+    variable_sheet.cell(row=row + 5, column=2).value = ""
+    variable_sheet.cell(row=row + 6, column=1).value = "flag_values"
+    variable_sheet.cell(row=row + 6, column=2).value = ""
+    variable_sheet.cell(row=row + 7, column=1).value = "flag_meanings"
+    variable_sheet.cell(row=row + 7, column=2).value = ""
 
     wb.save(filename=xlstable)
 
